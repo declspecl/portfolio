@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
-	darkMode: ["class"],
 	content: ["./src/**/*.tsx"],
 	theme: {
 		extend: {
@@ -56,6 +55,9 @@ const config: Config = {
 			fontFamily: {
 				"clash-display": "var(--font-clash-display)",
 				satoshi: "var(--font-satoshi)"
+			},
+			screens: {
+				xs: "440px"
 			}
 		}
 	},
