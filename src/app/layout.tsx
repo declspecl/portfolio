@@ -6,13 +6,13 @@ import localFont from "next/font/local";
 const clashDisplay = localFont({
 	src: [
 		{
-			path: "./fonts/ClashDisplay-Variable.ttf"
+			path: "./fonts/ClashDisplay-Variable.woff2"
 		},
 		{
 			path: "./fonts/ClashDisplay-Variable.woff"
 		},
 		{
-			path: "./fonts/ClashDisplay-Variable.woff2"
+			path: "./fonts/ClashDisplay-Variable.ttf"
 		}
 	],
 	variable: "--font-clash-display",
@@ -22,13 +22,13 @@ const clashDisplay = localFont({
 const satoshi = localFont({
 	src: [
 		{
-			path: "./fonts/Satoshi-Variable.ttf"
+			path: "./fonts/Satoshi-Variable.woff2"
 		},
 		{
 			path: "./fonts/Satoshi-Variable.woff"
 		},
 		{
-			path: "./fonts/Satoshi-Variable.woff2"
+			path: "./fonts/Satoshi-Variable.ttf"
 		}
 	],
 	variable: "--font-satoshi",

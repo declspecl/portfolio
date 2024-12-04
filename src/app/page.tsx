@@ -1,5 +1,6 @@
 import { GridBackground } from "@/components/graphics/GridBackground";
-import { HeroSection } from "@/views/Hero";
+import { ExperienceView } from "@/views/Experience";
+import { HeroSection } from "@/views/hero/Hero";
 import { Navbar } from "@/views/Navbar";
 
 export default function Home() {
@@ -10,6 +11,8 @@ export default function Home() {
 			<Navbar />
 			<div className="my-24" />
 			<HeroSection />
+			<div className="my-24" />
+			<ExperienceView />
 		</main>
 	);
 }
