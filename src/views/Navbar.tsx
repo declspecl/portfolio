@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export function Navbar() {
 	return (
-		<nav className="mx-auto py-2 px-8 w-fit flex justify-center items-center gap-4 bg-background rounded-full border border-muted">
+		<nav className="mx-auto flex w-fit items-center justify-center gap-4 rounded-full border border-muted bg-background px-8 py-2">
 			<NavbarLink href="#hero">About</NavbarLink>
 			<NavbarLink href="#experience">Experience</NavbarLink>
 			<NavbarLink href="#education">Education</NavbarLink>
@@ -28,7 +28,7 @@ function NavbarLink({ href, openInNewTab = false, children }: NavbarLinkProps) {
 		<a
 			href={href}
 			target={openInNewTab ? "_blank" : "_self"}
-			className={clsx("py-1.5 px-4 rounded-lg transition-colors", "hover:bg-foreground hover:text-background hover:underline")}
+			className={clsx("rounded-lg px-4 py-1.5 transition-colors", "hover:bg-foreground hover:text-background hover:underline")}
 		>
 			{children}
 		</a>

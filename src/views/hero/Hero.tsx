@@ -4,9 +4,9 @@ import { HeroButtons } from "./HeroButtons";
 export function HeroSection() {
 	return (
 		<section id="hero" className="mx-auto max-w-[40rem]">
-			<h1 className="font-clash-display text-5xl font-semibold mb-4">Hi, I&apos;m Gavin D&apos;Hondt.</h1>
+			<h1 className="mb-4 font-clash-display text-5xl font-semibold">Hi, I&apos;m Gavin D&apos;Hondt.</h1>
 
-			<div className="text-base text-muted-foreground mb-4">
+			<div className="mb-4 text-base text-muted-foreground">
 				<p className="mb-2">I&apos;m a Jr. SDE at Amazon and Computer Science student at Oakland University</p>
 				<p className="mb-2">
 					I&apos;ve been programming for over seven years, and I am obsessed with learning. I&apos;m currently focused on building full-stack web

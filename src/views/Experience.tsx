@@ -15,7 +15,7 @@ export function ExperienceView() {
 				<TabsContent value="experience">
 					<Card>
 						<CardHeader>
-							<h2 className="text-4xl font-clash-display font-semibold">Experience</h2>
+							<h2 className="font-clash-display text-4xl font-semibold">Experience</h2>
 						</CardHeader>
 
 						<CardContent className="relative flex flex-col">
@@ -27,7 +27,7 @@ export function ExperienceView() {
 				</TabsContent>
 
 				<TabsContent value="education">
-					<h2 className="text-4xl font-clash-display font-semibold">Education</h2>
+					<h2 className="font-clash-display text-4xl font-semibold">Education</h2>
 				</TabsContent>
 			</Tabs>
 		</div>
@@ -43,21 +43,21 @@ function ExperienceEntry({ className, experience }: ExperienceEntryProps) {
 	const { company, position, dateRange, location, bullets } = experience;
 
 	return (
-		<div className={cn("flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center", className)}>
-			<div>
+		<div className={cn("flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between", className)}>
+			<div className="sm:w-0 sm:grow">
 				<p className="text-2xl font-medium">
 					{formatExperienceDate(dateRange[0])} - {formatExperienceDate(dateRange[1])}
 				</p>
 				<p className="text-lg text-muted-foreground">{location}</p>
 			</div>
 
-			<div>
-				<h3 className="text-3xl font-medium font-clash-display">{company}</h3>
-				<p className="text-2xl font-medium text-muted-foreground">{position}</p>
+			<div className="sm:w-0 sm:grow">
+				<h3 className="font-clash-display text-3xl font-medium">{company}</h3>
+				<p className="mb-2 text-2xl font-medium text-muted-foreground">{position}</p>
 
 				<ul>
 					{bullets.map((bullet, i) => (
-						<li key={`${company}-${position}bullet-${i}`} className="list-disc list-inside">
+						<li key={`${company}-${position}-bullet-${i}`} className="list-inside list-disc">
 							{bullet}
 						</li>
 					))}

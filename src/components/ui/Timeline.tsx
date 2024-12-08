@@ -22,8 +22,8 @@ export function Timeline({ className }: TimelineProps) {
 	const scrollY = useTransform(scrollYProgress, [0, 1], [0, height]);
 
 	return (
-		<div ref={ref} className={cn("relative w-2 h-auto rounded-full bg-muted", className)}>
-			<motion.div style={{ height: scrollY }} className="absolute top-0 w-full rounded-full bg-primary z-10" />
+		<div ref={ref} className={cn("relative h-auto w-2 rounded-full bg-muted", className)}>
+			<motion.div style={{ height: scrollY }} className="absolute top-0 z-10 w-full rounded-full bg-primary" />
 		</div>
 	);
 }

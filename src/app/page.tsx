@@ -5,8 +5,8 @@ import { Navbar } from "@/views/Navbar";
 
 export default function Home() {
 	return (
-		<main className="relative font-satoshi p-8">
-			<GridBackground className="absolute inset-0 w-screen h-screen" />
+		<main className="relative p-8 font-satoshi">
+			<GridBackground className="absolute inset-0 h-screen w-screen" />
 
 			<Navbar />
 			<div className="my-24" />
