@@ -1,9 +1,16 @@
+import { TimelineEntry } from "@/components/TimelineEntry";
+import { educations, experiences } from "@/lib/timeline/data";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
-import { educations, experiences } from "@/lib/timeline/data";
-import { TimelineEntry } from "@/components/TimelineEntry";
 
-export function TimelineView() {
+interface TimelineViewProps {
+	selectedView?: "experience" | "education";
+}
+
+export function TimelineView({ selectedView }: TimelineViewProps) {
+	// TODO: implement URL hash to select the correct tab
+	console.log(selectedView);
+
 	return (
 		<div className="mx-auto max-w-[64rem]">
 			<Tabs defaultValue="experience">
