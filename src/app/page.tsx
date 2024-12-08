@@ -1,5 +1,5 @@
 import { GridBackground } from "@/components/graphics/GridBackground";
-import { ExperienceView } from "@/views/Experience";
+import { TimelineView } from "@/views/Timeline";
 import { HeroSection } from "@/views/hero/Hero";
 import { Navbar } from "@/views/Navbar";
 
@@ -12,7 +12,7 @@ export default function Home() {
 			<div className="my-24" />
 			<HeroSection />
 			<div className="my-24" />
-			<ExperienceView />
+			<TimelineView />
 		</main>
 	);
 }
