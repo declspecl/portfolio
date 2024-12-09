@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export function Navbar() {
 	return (
-		<nav className="mx-auto flex w-fit items-center justify-center gap-4 rounded-full border border-muted bg-background px-8 py-2">
+		<nav className="sticky top-8 z-10 mx-auto flex w-fit items-center justify-center gap-4 rounded-full border border-muted bg-background/80 px-8 py-2 backdrop-blur-sm">
 			<NavbarLink href="#hero">About</NavbarLink>
 			<NavbarLink href="#experience">Experience</NavbarLink>
 			<NavbarLink href="#education">Education</NavbarLink>

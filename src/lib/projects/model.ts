@@ -1,9 +1,19 @@
 import React from "react";
 
-export interface Technology {
-	name: string;
-	icon: React.ReactNode;
-	className?: string;
+export enum Technology {
+	React = "React",
+	TypeScript = "TypeScript",
+	Vite = "Vite",
+	NextJS = "Next.js",
+	TailwindCSS = "TailwindCSS",
+	PostgreSQL = "PostgreSQL",
+	Rust = "Rust",
+	Vercel = "Vercel",
+	Figma = "Figma",
+	Java = "Java",
+	SpringBoot = "Spring Boot",
+	AWS = "AWS",
+	Nginx = "Nginx"
 }
 
 export interface Screenshot {

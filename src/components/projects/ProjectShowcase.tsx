@@ -1,13 +1,13 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+import { IconContext } from "react-icons";
 import { Project } from "@/lib/projects/model";
 import { Button } from "@/components/ui/Button";
 import { LuGithub, LuGlobe } from "react-icons/lu";
-import { TechnologyBadge } from "./TechnologyBadges";
 import ClassNames from "embla-carousel-class-names";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
-import { IconContext } from "react-icons";
-import { cn } from "@/lib/utils";
+import { TechnologyBadge } from "./TechnologyBadges";
 
 interface ProjectShowcaseProps {
 	project: Project;
@@ -63,7 +63,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 
 				<div className="flex flex-row flex-wrap gap-2">
 					{technologies.map((technology) => (
-						<TechnologyBadge key={technology.name} technology={technology} />
+						<TechnologyBadge key={`project-${name}-technology-${technology}`} technology={technology} />
 					))}
 				</div>
 			</div>

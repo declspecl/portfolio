@@ -1,20 +1,18 @@
-import { Project } from "./model";
-import { FaAws, FaFigma, FaJava, FaReact, FaRust } from "react-icons/fa6";
-import { SiNextdotjs, SiNginx, SiPostgresql, SiSpringboot, SiTailwindcss, SiTypescript, SiVercel } from "react-icons/si";
+import { Project, Technology } from "./model";
 
 export const projects: Project[] = [
 	{
 		name: "UniFit",
 		summary: "Full-stack meal planning solution for university students",
 		technologies: [
-			{ name: "React", icon: <FaReact /> },
-			{ name: "TypeScript", icon: <SiTypescript /> },
-			{ name: "Next.js", icon: <SiNextdotjs /> },
-			{ name: "TailwindCSS", icon: <SiTailwindcss /> },
-			{ name: "PostgreSQL", icon: <SiPostgresql /> },
-			{ name: "Rust", icon: <FaRust /> },
-			{ name: "Vercel", icon: <SiVercel /> },
-			{ name: "Figma", icon: <FaFigma /> }
+			Technology.React,
+			Technology.TypeScript,
+			Technology.NextJS,
+			Technology.TailwindCSS,
+			Technology.PostgreSQL,
+			Technology.Rust,
+			Technology.Vercel,
+			Technology.Figma
 		],
 		links: {
 			live: "https://www.unifit.me"
@@ -49,15 +47,16 @@ export const projects: Project[] = [
 		name: "Personle!",
 		summary: "Full-stack daily guessing game for characters from the Persona video game series",
 		technologies: [
-			{ name: "React", icon: <FaReact /> },
-			{ name: "TypeScript", icon: <SiTypescript /> },
-			{ name: "TailwindCSS", icon: <SiTailwindcss /> },
-			{ name: "Java", icon: <FaJava /> },
-			{ name: "Spring Boot", icon: <SiSpringboot /> },
-			{ name: "AWS", icon: <FaAws /> },
-			{ name: "Rust", icon: <FaRust /> },
-			{ name: "Nginx", icon: <SiNginx /> },
-			{ name: "Figma", icon: <FaFigma /> }
+			Technology.React,
+			Technology.TypeScript,
+			Technology.Vite,
+			Technology.TailwindCSS,
+			Technology.Java,
+			Technology.SpringBoot,
+			Technology.AWS,
+			Technology.Rust,
+			Technology.Nginx,
+			Technology.Figma
 		],
 		links: {
 			github: "https://github.com/declspecl/personle",

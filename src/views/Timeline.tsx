@@ -1,6 +1,6 @@
+import { Card, CardContent } from "@/components/ui/Card";
 import { TimelineEntry } from "@/components/timeline/TimelineEntry";
 import { educationEntries, experienceEntries } from "@/lib/timeline/data";
-import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 interface TimelineViewProps {
@@ -13,6 +13,9 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 
 	return (
 		<section className="w-full" id="experience">
+			{/* TODO: make this dynamic on selected tab */}
+			<h1 className="mb-2 font-clash-display text-5xl font-semibold">Experience</h1>
+
 			<Tabs defaultValue="experience" id="education">
 				<TabsList className="grid w-full grid-cols-2">
 					<TabsTrigger value="experience">Experience</TabsTrigger>
@@ -20,7 +23,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 				</TabsList>
 
 				<TabsContent value="experience">
-					<TimelineSection title="Experience">
+					<TimelineSection>
 						{experienceEntries.map((experience) => (
 							<TimelineEntry key={experience.header} entry={experience} className="grow" />
 						))}
@@ -28,7 +31,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 				</TabsContent>
 
 				<TabsContent value="education">
-					<TimelineSection title="Education">
+					<TimelineSection>
 						{educationEntries.map((education) => (
 							<TimelineEntry key={education.header} entry={education} className="grow" />
 						))}
@@ -40,18 +43,13 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 }
 
 interface TimelineSectionProps {
-	title: string;
 	children: React.ReactNode;
 }
 
-function TimelineSection({ title, children }: TimelineSectionProps) {
+function TimelineSection({ children }: TimelineSectionProps) {
 	return (
 		<Card>
-			<CardHeader>
-				<h1 className="font-clash-display text-5xl font-semibold">{title}</h1>
-			</CardHeader>
-
-			<CardContent className="relative flex flex-col">{children}</CardContent>
+			<CardContent className="relative flex flex-col p-6">{children}</CardContent>
 		</Card>
 	);
 }

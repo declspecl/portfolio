@@ -17,7 +17,7 @@ export function HeroBadges() {
 						<FaRust />
 					</IconContext.Provider>
 				}
-				className="border-[#6b5b4e] bg-[#5a493d] hover:bg-[#6b5b4e]"
+				className="bg-[#5a493d] hover:bg-[#6b5b4e]"
 			/>
 
 			<HeroBadge
@@ -28,7 +28,7 @@ export function HeroBadges() {
 						<FaSteam />
 					</IconContext.Provider>
 				}
-				className="border-[#27395a] bg-[#05173b] hover:bg-[#27395a]"
+				className="bg-[#05173b] hover:bg-[#27395a]"
 			/>
 
 			<HeroBadge
@@ -39,7 +39,7 @@ export function HeroBadges() {
 						<FaSpotify />
 					</IconContext.Provider>
 				}
-				className="border-[#0d7538] bg-[#0d7538] hover:bg-[#0d7538]"
+				className="bg-[#084923] hover:bg-[#0c5e2e]"
 			/>
 		</div>
 	);
