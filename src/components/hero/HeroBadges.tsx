@@ -39,7 +39,7 @@ export function HeroBadges() {
 						<FaSpotify />
 					</IconContext.Provider>
 				}
-				className="bg-[#084923] hover:bg-[#0c5e2e]"
+				className="bg-[#00722f] hover:bg-[#008136]"
 			/>
 		</div>
 	);

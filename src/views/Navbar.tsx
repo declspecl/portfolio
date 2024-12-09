@@ -2,8 +2,7 @@ export function Navbar() {
 	return (
 		<nav className="sticky top-8 z-10 mx-auto flex w-fit items-center justify-center gap-8 rounded-full border border-muted bg-background/80 px-8 py-3.5 backdrop-blur-sm">
 			<NavbarLink href="#hero">About</NavbarLink>
-			<NavbarLink href="#experience">Experience</NavbarLink>
-			<NavbarLink href="#education">Education</NavbarLink>
+			<NavbarLink href="#timeline">Education/Education</NavbarLink>
 			<NavbarLink href="#projects">Projects</NavbarLink>
 			<NavbarLink href="/resume.pdf" openInNewTab>
 				Resumé

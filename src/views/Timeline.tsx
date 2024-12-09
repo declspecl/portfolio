@@ -12,7 +12,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 	console.log(selectedView);
 
 	return (
-		<section className="w-full" id="experience">
+		<section className="w-full" id="timeline">
 			{/* TODO: make this dynamic on selected tab */}
 			<h1 className="mb-2 font-clash-display text-5xl font-semibold">Experience</h1>
 

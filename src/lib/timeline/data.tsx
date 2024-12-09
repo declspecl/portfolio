@@ -1,3 +1,4 @@
+import { Technology } from "@/lib/common";
 import { TimelineEntryInformation } from "./model";
 
 export const experienceEntries: TimelineEntryInformation[] = [
@@ -12,7 +13,8 @@ export const experienceEntries: TimelineEntryInformation[] = [
 			"Conduct numerous large-scale migrations and code changes to modernize services",
 			"Develop a novel tool to diagnose Seller Support issues, facilitating easier debugging for engineering teams",
 			"Reduce maintenance overhead by aiding in deprecating and distributing responsibilities of legacy services"
-		]
+		],
+		badges: [Technology.AWS, Technology.Java, Technology.React, Technology.TypeScript, Technology.Rust, Technology.Python, "Agile"]
 	}
 ];
 
@@ -28,6 +30,7 @@ export const educationEntries: TimelineEntryInformation[] = [
 			"Member of the Honors College",
 			"President's list for Fall 2023 and Winter 2024",
 			"Relevant coursework: Data Structures, Intro to Computer Networks, C Programming and Unix, Object-Oriented Programming"
-		]
+		],
+		badges: [Technology.Java, Technology.React, Technology.TypeScript, Technology.CPP]
 	}
 ];

@@ -1,4 +1,5 @@
-import { Project, Technology } from "./model";
+import { Project } from "./model";
+import { Technology } from "@/lib/common";
 
 export const projects: Project[] = [
 	{
@@ -49,7 +50,6 @@ export const projects: Project[] = [
 		technologies: [
 			Technology.React,
 			Technology.TypeScript,
-			Technology.Vite,
 			Technology.TailwindCSS,
 			Technology.Java,
 			Technology.SpringBoot,

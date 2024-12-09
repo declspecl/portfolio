@@ -1,4 +1,5 @@
 import React from "react";
+import { Technology } from "@/lib/common";
 
 export enum Month {
 	January = "January",
@@ -75,6 +76,7 @@ export interface TimelineEntryDetails {
 	subheader: string;
 	dateRange: [TimelineEntryDate, TimelineEntryDate | null];
 	location: string;
+	badges: (Technology | string)[];
 }
 
 interface BulletedTimelineEntryDetails extends TimelineEntryDetails {

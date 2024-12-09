@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import { Technology } from "@/lib/common";
+import { StaticBadge, TechnologyBadge } from "@/components/projects/TechnologyBadges";
 import { formatDateRangeDifference, formatTimelineEntryDate, TimelineEntryInformation } from "@/lib/timeline/model";
 
 interface TimelineEntryProps {
@@ -7,7 +9,7 @@ interface TimelineEntryProps {
 }
 
 export function TimelineEntry({ className, entry }: TimelineEntryProps) {
-	const { header, subheader, dateRange, location, ...rest } = entry;
+	const { header, subheader, dateRange, location, badges, ...rest } = entry;
 
 	return (
 		<div className={cn("flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8", className)}>
@@ -35,6 +37,16 @@ export function TimelineEntry({ className, entry }: TimelineEntryProps) {
 						))}
 					</ul>
 				)}
+
+				<div className="mt-2 flex flex-row flex-wrap items-center gap-2">
+					{badges.map((badge) =>
+						Object.values(Technology).includes(badge as Technology) ? (
+							<TechnologyBadge key={badge} technology={badge as Technology} />
+						) : (
+							<StaticBadge key={badge} name={badge as string} />
+						)
+					)}
+				</div>
 			</div>
 		</div>
 	);

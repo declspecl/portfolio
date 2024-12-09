@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils";
 import { FaReact } from "react-icons/fa";
-import { Technology } from "@/lib/projects/model";
-import { SiNextdotjs, SiNginx, SiPostgresql, SiSpringboot, SiTailwindcss, SiTypescript, SiVercel, SiVite } from "react-icons/si";
-import { FaAws, FaFigma, FaJava, FaRust } from "react-icons/fa6";
+import { Technology } from "@/lib/common";
+import { SiCplusplus, SiNextdotjs, SiNginx, SiPostgresql, SiSpringboot, SiTailwindcss, SiTypescript, SiVercel, SiVite } from "react-icons/si";
+import { FaAws, FaFigma, FaJava, FaPython, FaRust } from "react-icons/fa6";
 
-interface BadgeProps {
+interface StaticBadgeProps {
 	name: string;
-	icon: React.ReactNode;
+	icon?: React.ReactNode | null;
 	className?: string;
 }
 
-function Badge({ name, icon, className }: BadgeProps) {
+export function StaticBadge({ name, icon, className }: StaticBadgeProps) {
 	return (
 		<div
 			className={cn(
@@ -25,55 +25,63 @@ function Badge({ name, icon, className }: BadgeProps) {
 }
 
 export function ReactBadge() {
-	return <Badge name={Technology.React} icon={<FaReact />} className="bg-[#0e2442]" />;
+	return <StaticBadge name={Technology.React} icon={<FaReact />} className="bg-[#0e2442]" />;
 }
 
 export function TypeScriptBadge() {
-	return <Badge name={Technology.TypeScript} icon={<SiTypescript />} className="bg-[#00375c]" />;
+	return <StaticBadge name={Technology.TypeScript} icon={<SiTypescript />} className="bg-[#00375c]" />;
 }
 
 export function ViteBadge() {
-	return <Badge name={Technology.Vite} icon={<SiVite />} className="bg-[#2c063d]" />;
+	return <StaticBadge name={Technology.Vite} icon={<SiVite />} className="bg-[#2c063d]" />;
 }
 
 export function NextJSBadge() {
-	return <Badge name={Technology.NextJS} icon={<SiNextdotjs />} className="bg-black" />;
+	return <StaticBadge name={Technology.NextJS} icon={<SiNextdotjs />} className="bg-black" />;
 }
 
 export function TailwindCSSBadge() {
-	return <Badge name={Technology.TailwindCSS} icon={<SiTailwindcss />} className="bg-[#162144]" />;
+	return <StaticBadge name={Technology.TailwindCSS} icon={<SiTailwindcss />} className="bg-[#162144]" />;
 }
 
 export function PostgreSQLBadge() {
-	return <Badge name={Technology.PostgreSQL} icon={<SiPostgresql />} className="bg-[#211b63]" />;
+	return <StaticBadge name={Technology.PostgreSQL} icon={<SiPostgresql />} className="bg-[#211b63]" />;
+}
+
+export function PythonBadge() {
+	return <StaticBadge name={Technology.Python} icon={<FaPython />} className="bg-[#7f720a]" />;
 }
 
 export function RustBadge() {
-	return <Badge name={Technology.Rust} icon={<FaRust />} className="bg-black" />;
+	return <StaticBadge name={Technology.Rust} icon={<FaRust />} className="bg-black" />;
+}
+
+export function CPPBadge() {
+	return <StaticBadge name={Technology.CPP} icon={<SiCplusplus />} className="bg-[#004181]" />;
 }
 
 export function VercelBadge() {
-	return <Badge name={Technology.Vercel} icon={<SiVercel />} className="bg-black" />;
+	return <StaticBadge name={Technology.Vercel} icon={<SiVercel />} className="bg-black" />;
 }
 
 export function FigmaBadge() {
-	return <Badge name={Technology.Figma} icon={<FaFigma />} className="bg-[#5e0202]" />;
+	return <StaticBadge name={Technology.Figma} icon={<FaFigma />} className="bg-[#5e0202]" />;
 }
 
 export function JavaBadge() {
-	return <Badge name={Technology.Java} icon={<FaJava />} className="bg-[#4b2b03]" />;
+	return <StaticBadge name={Technology.Java} icon={<FaJava />} className="bg-[#4b2b03]" />;
 }
 
 export function SpringBootBadge() {
-	return <Badge name={Technology.SpringBoot} icon={<SiSpringboot />} className="bg-[#2b4719]" />;
+	return <StaticBadge name={Technology.SpringBoot} icon={<SiSpringboot />} className="bg-[#2b4719]" />;
 }
 
 export function AWSBadge() {
-	return <Badge name={Technology.AWS} icon={<FaAws />} className="bg-[#141f2e]" />;
+	return <StaticBadge name={Technology.AWS} icon={<FaAws />} className="bg-[#141f2e]" />;
 }
 
 export function NginxBadge() {
-	return <Badge name={Technology.Nginx} icon={<SiNginx />} className="bg-[#0c5a29]" />;
+	return <StaticBadge name={Technology.Nginx} icon={<SiNginx />} className="bg-[#0c5a29]" />;
 }
 
 interface TechnologyBadgeProps {
@@ -94,8 +102,12 @@ export function TechnologyBadge({ technology }: TechnologyBadgeProps) {
 			return <TailwindCSSBadge />;
 		case Technology.PostgreSQL:
 			return <PostgreSQLBadge />;
+		case Technology.Python:
+			return <PythonBadge />;
 		case Technology.Rust:
 			return <RustBadge />;
+		case Technology.CPP:
+			return <CPPBadge />;
 		case Technology.Vercel:
 			return <VercelBadge />;
 		case Technology.Figma:
