@@ -6,35 +6,48 @@ import { LuGithub, LuGlobe } from "react-icons/lu";
 import { TechnologyBadge } from "./TechnologyBadge";
 import ClassNames from "embla-carousel-class-names";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
+import { IconContext } from "react-icons";
+import { cn } from "@/lib/utils";
 
 interface ProjectShowcaseProps {
 	project: Project;
+	direction?: "row" | "row-reverse";
 }
 
-export function ProjectShowcase({ project }: ProjectShowcaseProps) {
+export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectShowcaseProps) {
 	const { name, summary, technologies, links, screenshots, ...rest } = project;
 
 	return (
-		<div className="flex flex-col gap-4 md:flex-row-reverse md:items-center md:gap-8">
+		<div
+			className={cn("flex flex-col gap-4 md:items-center md:gap-8", {
+				"md:flex-row": direction === "row",
+				"md:flex-row-reverse": direction === "row-reverse"
+			})}
+		>
 			<div className="md:grow md:basis-0">
-				<h3 className="font-clash-display text-3xl font-semibold">{name}</h3>
-				<p className="text-base text-muted-foreground">{summary}</p>
+				<h3 className="inline-flex flex-row items-center gap-4 font-clash-display text-3xl font-semibold">
+					{name}
 
-				{links?.github && (
-					<Button size="icon" asChild>
-						<a href={links.github} target="_blank">
-							<LuGithub />
-						</a>
-					</Button>
-				)}
-
-				{links?.live && (
-					<Button size="icon" asChild>
-						<a href={links.live} target="_blank">
-							<LuGlobe />
-						</a>
-					</Button>
-				)}
+					<div className="flex flex-row gap-2">
+						<IconContext.Provider value={{ size: "1.5rem" }}>
+							{links?.github && (
+								<Button size="icon" asChild>
+									<a href={links.github} target="_blank">
+										<LuGithub />
+									</a>
+								</Button>
+							)}
+							{links?.live && (
+								<Button size="icon" asChild>
+									<a href={links.live} target="_blank">
+										<LuGlobe />
+									</a>
+								</Button>
+							)}
+						</IconContext.Provider>
+					</div>
+				</h3>
+				<p className="mb-2 text-base text-muted-foreground">{summary}</p>
 
 				{rest.type === "bullets" ? (
 					<ul className="list-inside list-disc">
@@ -45,6 +58,8 @@ export function ProjectShowcase({ project }: ProjectShowcaseProps) {
 				) : (
 					rest.content
 				)}
+
+				<div className="my-4" />
 
 				<div className="flex flex-row flex-wrap gap-2">
 					{technologies.map((technology) => (
@@ -66,7 +81,14 @@ export function ProjectShowcase({ project }: ProjectShowcaseProps) {
 				<CarouselContent className="mb-2">
 					{screenshots.map((screenshot) => (
 						<CarouselItem key={`project-${name}-screenshot-${screenshot.src}`} className="basis-3/4 opacity-30 transition-opacity duration-300">
-							<img loading="eager" src={screenshot.src} alt={screenshot.alt} width={screenshot.width} height={screenshot.height} />
+							<img
+								loading="eager"
+								src={screenshot.src}
+								alt={screenshot.alt}
+								width={screenshot.width}
+								height={screenshot.height}
+								className="rounded border"
+							/>
 						</CarouselItem>
 					))}
 				</CarouselContent>

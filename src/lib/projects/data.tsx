@@ -4,6 +4,47 @@ import { SiNginx, SiSpringboot, SiTypescript } from "react-icons/si";
 
 export const projects: Project[] = [
 	{
+		name: "UniFit",
+		summary: "Full-stack meal planning solution for university students",
+		technologies: [
+			{ name: "React", icon: <FaReact /> },
+			{ name: "TypeScript", icon: <SiTypescript /> },
+			{ name: "Java", icon: <FaJava /> },
+			{ name: "Spring Boot", icon: <SiSpringboot /> },
+			{ name: "AWS", icon: <FaAws /> },
+			{ name: "Figma", icon: <FaFigma /> },
+			{ name: "Nginx", icon: <SiNginx /> }
+		],
+		links: {
+			live: "https://www.unifit.me"
+		},
+		screenshots: [
+			{
+				src: "/unifit-home.png",
+				alt: "UniFit home page",
+				width: 1280,
+				height: 1020
+			},
+			{
+				src: "/unifit-account.png",
+				alt: "UniFit account and meal plans page",
+				width: 1280,
+				height: 1020
+			},
+			{
+				src: "/unifit-builder.png",
+				alt: "UniFit meal plan preferences builder page",
+				width: 1280,
+				height: 1020
+			}
+		],
+		type: "bullets",
+		bullets: [
+			"Engineered an optimal meal plan generation algorithm using dynamic programming, reducing computation time and memory footprint both by over 90% compared to brute force approaches",
+			"Architected a REST API to efficiently query ~800k meal plans considering various user preferences"
+		]
+	},
+	{
 		name: "Personle!",
 		summary: "Full-stack daily guessing game for characters from the Persona video game series",
 		technologies: [
