@@ -1,5 +1,5 @@
-import { formatDateRangeDifference, formatTimelineEntryDate, TimelineEntryInformation } from "@/lib/timeline/model";
 import { cn } from "@/lib/utils";
+import { formatDateRangeDifference, formatTimelineEntryDate, TimelineEntryInformation } from "@/lib/timeline/model";
 
 interface TimelineEntryProps {
 	className?: string;
@@ -10,7 +10,7 @@ export function TimelineEntry({ className, entry }: TimelineEntryProps) {
 	const { header, subheader, dateRange, location, ...rest } = entry;
 
 	return (
-		<div className={cn("flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between", className)}>
+		<div className={cn("flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8", className)}>
 			{/* LHS: Date and Location */}
 			<div className="sm:w-0 sm:grow">
 				<p className="text-2xl font-medium">

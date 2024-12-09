@@ -12,7 +12,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 	console.log(selectedView);
 
 	return (
-		<div className="mx-auto max-w-[64rem]">
+		<div className="w-full">
 			<Tabs defaultValue="experience">
 				<TabsList className="grid w-full grid-cols-2">
 					<TabsTrigger value="experience">Experience</TabsTrigger>
