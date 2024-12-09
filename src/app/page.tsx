@@ -8,7 +8,7 @@ import { ResponsiveContainer } from "@/components/layout/ResponsiveContainer";
 export default function Home() {
 	return (
 		<main className="relative p-8 font-satoshi">
-			<GridBackground className="absolute inset-0 h-screen w-screen" />
+			<GridBackground className="absolute inset-0 h-[110vh] w-screen" />
 
 			<Navbar />
 

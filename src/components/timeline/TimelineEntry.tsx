@@ -21,8 +21,8 @@ export function TimelineEntry({ className, entry }: TimelineEntryProps) {
 
 			{/* RHS: Header, Subheader, and Bullets/Content */}
 			<div className="sm:grow sm:basis-0">
-				<h3 className="font-clash-display text-3xl font-medium">{header}</h3>
-				<p className="mb-2 text-2xl font-medium text-muted-foreground">{subheader}</p>
+				<h2 className="font-clash-display text-4xl font-medium">{header}</h2>
+				<h3 className="mb-2 text-2xl text-muted-foreground">{subheader}</h3>
 
 				{rest.type === "content" ? (
 					<>{rest.content}</>

@@ -25,7 +25,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 			})}
 		>
 			<div className="md:grow md:basis-0">
-				<h3 className="inline-flex flex-row items-center gap-4 font-clash-display text-3xl font-semibold">
+				<h2 className="inline-flex flex-row items-center gap-4 font-clash-display text-4xl font-semibold">
 					{name}
 
 					<div className="flex flex-row gap-2">
@@ -46,7 +46,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 							)}
 						</IconContext.Provider>
 					</div>
-				</h3>
+				</h2>
 				<p className="mb-2 text-base text-muted-foreground">{summary}</p>
 
 				{rest.type === "bullets" ? (

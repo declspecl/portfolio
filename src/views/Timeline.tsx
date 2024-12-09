@@ -48,7 +48,7 @@ function TimelineSection({ title, children }: TimelineSectionProps) {
 	return (
 		<Card>
 			<CardHeader>
-				<h2 className="font-clash-display text-4xl font-semibold">{title}</h2>
+				<h1 className="font-clash-display text-5xl font-semibold">{title}</h1>
 			</CardHeader>
 
 			<CardContent className="relative flex flex-col">{children}</CardContent>
