@@ -6,7 +6,7 @@ export function HeroSection() {
 		<section id="hero" className="mx-auto max-w-[40rem]">
 			<h1 className="mb-4 font-clash-display text-5xl font-semibold">Hi, I&apos;m Gavin D&apos;Hondt.</h1>
 
-			<div className="mb-2 text-base text-muted-foreground">
+			<div className="mb-2 text-base">
 				<p className="mb-2">I&apos;m a Jr. SDE at Amazon and Computer Science student at Oakland University</p>
 				<p className="mb-2">
 					I&apos;ve been programming for over seven years, and I am obsessed with learning. I&apos;m currently focused on building full-stack web
@@ -15,7 +15,7 @@ export function HeroSection() {
 				<p>Outside of programming, I love learning new things, listening to music, and playing video games!</p>
 			</div>
 
-			<div className="mb-4 text-base text-muted-foreground">
+			<div className="mb-4 text-base">
 				<p className="mb-2">This is what I&apos;m currently up to:</p>
 
 				<HeroBadges />
