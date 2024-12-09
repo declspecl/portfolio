@@ -3,7 +3,7 @@
 import { Project } from "@/lib/projects/model";
 import { Button } from "@/components/ui/Button";
 import { LuGithub, LuGlobe } from "react-icons/lu";
-import { TechnologyBadge } from "./TechnologyBadge";
+import { TechnologyBadge } from "./TechnologyBadges";
 import ClassNames from "embla-carousel-class-names";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
 import { IconContext } from "react-icons";
@@ -29,16 +29,16 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 					{name}
 
 					<div className="flex flex-row gap-2">
-						<IconContext.Provider value={{ size: "1.5rem" }}>
+						<IconContext.Provider value={{ size: "1.25rem" }}>
 							{links?.github && (
-								<Button size="icon" asChild>
+								<Button size="icon-sm" variant="default" asChild>
 									<a href={links.github} target="_blank">
 										<LuGithub />
 									</a>
 								</Button>
 							)}
 							{links?.live && (
-								<Button size="icon" asChild>
+								<Button size="icon-sm" asChild>
 									<a href={links.live} target="_blank">
 										<LuGlobe />
 									</a>

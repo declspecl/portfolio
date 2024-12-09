@@ -1,6 +1,6 @@
 import { Project } from "./model";
-import { FaAws, FaFigma, FaJava, FaReact } from "react-icons/fa6";
-import { SiNginx, SiSpringboot, SiTypescript } from "react-icons/si";
+import { FaAws, FaFigma, FaJava, FaReact, FaRust } from "react-icons/fa6";
+import { SiNextdotjs, SiNginx, SiPostgresql, SiSpringboot, SiTailwindcss, SiTypescript, SiVercel } from "react-icons/si";
 
 export const projects: Project[] = [
 	{
@@ -9,11 +9,12 @@ export const projects: Project[] = [
 		technologies: [
 			{ name: "React", icon: <FaReact /> },
 			{ name: "TypeScript", icon: <SiTypescript /> },
-			{ name: "Java", icon: <FaJava /> },
-			{ name: "Spring Boot", icon: <SiSpringboot /> },
-			{ name: "AWS", icon: <FaAws /> },
-			{ name: "Figma", icon: <FaFigma /> },
-			{ name: "Nginx", icon: <SiNginx /> }
+			{ name: "Next.js", icon: <SiNextdotjs /> },
+			{ name: "TailwindCSS", icon: <SiTailwindcss /> },
+			{ name: "PostgreSQL", icon: <SiPostgresql /> },
+			{ name: "Rust", icon: <FaRust /> },
+			{ name: "Vercel", icon: <SiVercel /> },
+			{ name: "Figma", icon: <FaFigma /> }
 		],
 		links: {
 			live: "https://www.unifit.me"
@@ -50,11 +51,13 @@ export const projects: Project[] = [
 		technologies: [
 			{ name: "React", icon: <FaReact /> },
 			{ name: "TypeScript", icon: <SiTypescript /> },
+			{ name: "TailwindCSS", icon: <SiTailwindcss /> },
 			{ name: "Java", icon: <FaJava /> },
 			{ name: "Spring Boot", icon: <SiSpringboot /> },
 			{ name: "AWS", icon: <FaAws /> },
-			{ name: "Figma", icon: <FaFigma /> },
-			{ name: "Nginx", icon: <SiNginx /> }
+			{ name: "Rust", icon: <FaRust /> },
+			{ name: "Nginx", icon: <SiNginx /> },
+			{ name: "Figma", icon: <FaFigma /> }
 		],
 		links: {
 			github: "https://github.com/declspecl/personle",

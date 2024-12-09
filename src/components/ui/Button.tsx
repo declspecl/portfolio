@@ -15,9 +15,8 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				default: clsx(
-					"bg-primary-foreground text-primary stroke-primary border-2 border-primary",
-					"before:content-[''] before:-z-10 before:absolute before:top-0 before:left-0 before:w-[calc(100%+0.25rem)] before:h-[calc(100%+0.25rem)] before:bg-primary before:rounded-md",
-					"hover:bg-primary hover:text-primary-foreground hover:stroke-primary-foreground",
+					"bg-background text-primary stroke-primary border-2 border-primary",
+					"hover:bg-primary hover:text-background hover:stroke-primary-foreground",
 					"disabled:border-primary-foreground"
 				)
 			},
@@ -25,7 +24,8 @@ const buttonVariants = cva(
 				default: "h-10 px-4 py-2",
 				sm: "h-9 rounded-md px-3",
 				lg: "h-11 rounded-md px-8",
-				icon: "h-10 w-10"
+				icon: "h-10 w-10",
+				"icon-sm": "h-8 w-8"
 			}
 		},
 		defaultVariants: {
@@ -41,6 +41,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, asChild = false, ...props }, ref) => {
 	const Comp = asChild ? Slot : "button";
-	return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+
+	return (
+		<div className="relative inline-flex before:absolute before:left-0 before:top-0 before:h-[calc(100%+0.15rem)] before:w-[calc(100%+0.15rem)] before:rounded-md before:bg-primary before:content-['']">
+			<Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+		</div>
+	);
 });
 Button.displayName = "Button";

@@ -1,5 +1,5 @@
 import { projects } from "@/lib/projects/data";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/ui/Separator";
 import { Card, CardContent } from "@/components/ui/Card";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 
