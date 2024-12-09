@@ -24,7 +24,7 @@ export const projects: Project[] = [
 				src: "/personle-home.png",
 				alt: "Personle! home page",
 				width: 1280,
-				height: 840
+				height: 1020
 			},
 			{
 				src: "/personle-daily.png",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
 				src: "/personle-compendium.png",
 				alt: "Personle! compendium page",
 				width: 1280,
-				height: 840
+				height: 1020
 			}
 		],
 		type: "bullets",
