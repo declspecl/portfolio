@@ -33,7 +33,7 @@ export function HeroBadges() {
 
 			<HeroBadge
 				text="Listening to: Louise - TV Girl"
-				href="https://open.spotify.com/track/263KsGZODTZouh3RFGNaLX?si=fb81f9e172a746b0"
+				href="https://open.spotify.com/track/263KsGZODTZouh3RFGNaLX"
 				icon={
 					<IconContext.Provider value={{ size: "1rem" }}>
 						<FaSpotify />

@@ -1,5 +1,5 @@
-import { TimelineEntry } from "@/components/TimelineEntry";
-import { educations, experiences } from "@/lib/timeline/data";
+import { TimelineEntry } from "@/components/timeline/TimelineEntry";
+import { educationEntries, experienceEntries } from "@/lib/timeline/data";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
@@ -21,7 +21,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 
 				<TabsContent value="experience">
 					<TimelineSection title="Experience">
-						{experiences.map((experience) => (
+						{experienceEntries.map((experience) => (
 							<TimelineEntry key={experience.header} entry={experience} className="grow" />
 						))}
 					</TimelineSection>
@@ -29,7 +29,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 
 				<TabsContent value="education">
 					<TimelineSection title="Education">
-						{educations.map((education) => (
+						{educationEntries.map((education) => (
 							<TimelineEntry key={education.header} entry={education} className="grow" />
 						))}
 					</TimelineSection>
