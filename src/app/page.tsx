@@ -1,6 +1,7 @@
 import { Navbar } from "@/views/Navbar";
 import { HeroSection } from "@/views/Hero";
 import { TimelineView } from "@/views/Timeline";
+import { ProjectsView } from "@/views/Projects";
 import { GridBackground } from "@/components/graphics/GridBackground";
 import { ResponsiveContainer } from "@/components/layout/ResponsiveContainer";
 
@@ -19,6 +20,10 @@ export default function Home() {
 
 			<ResponsiveContainer>
 				<TimelineView />
+
+				<div className="my-24" />
+
+				<ProjectsView />
 			</ResponsiveContainer>
 		</main>
 	);

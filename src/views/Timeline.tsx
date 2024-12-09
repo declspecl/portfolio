@@ -12,8 +12,8 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 	console.log(selectedView);
 
 	return (
-		<div className="w-full">
-			<Tabs defaultValue="experience">
+		<section className="w-full" id="experience">
+			<Tabs defaultValue="experience" id="education">
 				<TabsList className="grid w-full grid-cols-2">
 					<TabsTrigger value="experience">Experience</TabsTrigger>
 					<TabsTrigger value="education">Education</TabsTrigger>
@@ -35,7 +35,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 					</TimelineSection>
 				</TabsContent>
 			</Tabs>
-		</div>
+		</section>
 	);
 }
 

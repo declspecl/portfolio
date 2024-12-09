@@ -12,7 +12,7 @@ export function HeroSection() {
 					I&apos;ve been programming for over seven years, and I am obsessed with learning. I&apos;m currently focused on building full-stack web
 					solutions, particularly using cloud technologies, but I&apos;m always dipping my toes into various branches of Computer Science!
 				</p>
-				<p>Outside of programming, I love exploring other cultures, listening to music, learning how things work, and playing video games!</p>
+				<p>Outside of programming, I love learning new things, listening to music, and playing video games!</p>
 			</div>
 
 			<div className="mb-4 text-base text-muted-foreground">
