@@ -1,0 +1,4 @@
+(max-width: 768px) ~460x390
+rest 350x280
+
+fullsize: 1280x1080

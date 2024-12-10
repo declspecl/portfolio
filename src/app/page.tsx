@@ -12,7 +12,7 @@ export default function Home() {
 
 			<Navbar />
 
-			<div className="my-24" />
+			<div className="my-8 sm:my-24" />
 
 			<HeroSection />
 
