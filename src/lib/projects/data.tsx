@@ -263,7 +263,8 @@ export const projects: Project[] = [
 		type: "bullets",
 		bullets: [
 			"Led a team of 4 student developers to deliver and deploy a production application in 10 weeks",
-			"Designated tasks using Agile methodologies, Kanban, and weekly scrum meetings to ensure timely completion of features",
+			"Designated tasks using Agile methodologies and Kanban",
+			"Organized weekly scrum meetings to ensure timely completion of features",
 			"Created numerous reports and diagrams documenting the application's design, business requirements, and implementation"
 		]
 	}

@@ -74,11 +74,11 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 				</div>
 
 				<Carousel
+					id={`project-${name}-screenshot-carousel`}
 					className="md:grow md:basis-0"
 					opts={{ loop: true }}
 					plugins={[
 						ClassNames({
-							inView: "opacity-30",
 							snapped: "!opacity-100"
 						})
 					]}
@@ -99,6 +99,8 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 										srcSet={`${screenshot.mobile.src} ${screenshot.mobile.width}w, ${screenshot.desktop.src} ${screenshot.desktop.width}w`}
 										sizes={`(max-width: 768px) ${screenshot.mobile.width}px, ${screenshot.desktop.width}px`}
 										src={screenshot.mobile.src}
+										width={screenshot.mobile.width}
+										height={screenshot.mobile.height}
 										alt={screenshot.name}
 										className="rounded border"
 									/>
@@ -114,27 +116,37 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 				</Carousel>
 			</div>
 
-			<DialogContent xButtonOnClick={() => setMagnifiedScreenshot(null)}>
-				<DialogHeader>
-					<DialogTitle className="font-clash-display text-xl font-semibold xs:text-2xl">{magnifiedScreenshot?.name}</DialogTitle>
-				</DialogHeader>
+			<DialogContent
+				xButtonOnClick={() => setMagnifiedScreenshot(null)}
+				aria-description="image magnification"
+				aria-describedby={`project-${name}-screenshot-carousel`}
+			>
+				{magnifiedScreenshot && (
+					<>
+						<DialogHeader>
+							<DialogTitle className="font-clash-display text-2xl font-semibold xs:text-3xl">{magnifiedScreenshot.name}</DialogTitle>
+						</DialogHeader>
 
-				<img
-					loading="eager"
-					className="mx-auto border"
-					alt={magnifiedScreenshot?.name}
-					srcSet={`${magnifiedScreenshot?.mobile.src} ${magnifiedScreenshot?.mobile.width}w, ${magnifiedScreenshot?.magnified.src} ${magnifiedScreenshot?.magnified.width}w`}
-					sizes={`(max-width: 768px) ${magnifiedScreenshot?.mobile.width}px, ${magnifiedScreenshot?.magnified.width}px`}
-					src={magnifiedScreenshot?.magnified.src}
-				/>
+						<img
+							loading="eager"
+							srcSet={`${magnifiedScreenshot.mobile.src} ${magnifiedScreenshot.mobile.width}w, ${magnifiedScreenshot.magnified.src} ${magnifiedScreenshot.magnified.width}w`}
+							sizes={`(max-width: 768px) ${magnifiedScreenshot.mobile.width}px, ${magnifiedScreenshot.magnified.width}px`}
+							src={magnifiedScreenshot.magnified.src}
+							width={magnifiedScreenshot.magnified.width}
+							height={magnifiedScreenshot.magnified.height}
+							alt={magnifiedScreenshot.name}
+							className="mx-auto border"
+						/>
 
-				<div className="flex flex-row items-center justify-end">
-					<DialogClose asChild>
-						<Button onClick={() => setMagnifiedScreenshot(null)} className="w-fit">
-							Close
-						</Button>
-					</DialogClose>
-				</div>
+						<div className="flex flex-row items-center justify-end">
+							<DialogClose asChild>
+								<Button onClick={() => setMagnifiedScreenshot(null)} className="w-fit">
+									Close
+								</Button>
+							</DialogClose>
+						</div>
+					</>
+				)}
 			</DialogContent>
 		</Dialog>
 	);
