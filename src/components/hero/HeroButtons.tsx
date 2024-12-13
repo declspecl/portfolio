@@ -8,7 +8,7 @@ export function HeroButtons() {
 	return (
 		<div className="flex flex-row flex-wrap items-center gap-4">
 			<Button asChild>
-				<a href="#experience">Learn more</a>
+				<a href="#timeline">Learn more</a>
 			</Button>
 			<Button asChild>
 				<a href="/resume.pdf" target="_blank">

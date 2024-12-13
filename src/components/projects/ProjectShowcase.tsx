@@ -6,8 +6,8 @@ import { IconContext } from "react-icons";
 import { Button } from "@/components/ui/Button";
 import { LuGithub, LuGlobe } from "react-icons/lu";
 import ClassNames from "embla-carousel-class-names";
-import { TechnologyBadge } from "./TechnologyBadges";
 import { Project, ProjectScreenshot } from "@/lib/projects/model";
+import { TechnologyBadge } from "@/components/common/TechnologyBadges";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
 

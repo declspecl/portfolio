@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { Technology } from "@/lib/common";
 import { ToPresentDateRange } from "./ToPresentDateRange";
 import { TimelineEntryInformation } from "@/lib/timeline/model";
-import { StaticBadge, TechnologyBadge } from "@/components/projects/TechnologyBadges";
+import { StaticBadge, TechnologyBadge } from "@/components/common/TechnologyBadges";
 import { formatDateRangeDifference, formatTimelineEntryDate } from "@/lib/timeline/server";
 
 interface TimelineEntryProps {

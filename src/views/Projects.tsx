@@ -12,11 +12,11 @@ export function ProjectsView() {
 			<Card>
 				<CardContent className="flex flex-col gap-8 p-6">
 					{projects.map((project, i) => (
-						<>
-							<ProjectShowcase key={project.name} project={project} direction={i % 2 === 0 ? "row-reverse" : "row"} />
+						<div key={`project-${project.name}`} className="flex flex-col gap-8">
+							<ProjectShowcase project={project} direction={i % 2 === 0 ? "row-reverse" : "row"} />
 
-							{i !== projects.length - 1 && <Separator key={`${project.name}-separator`} />}
-						</>
+							{i !== projects.length - 1 && <Separator />}
+						</div>
 					))}
 				</CardContent>
 			</Card>
