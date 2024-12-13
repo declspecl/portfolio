@@ -9,7 +9,7 @@ export const experienceEntries: TimelineEntryInformation[] = [
 		location: "Detroit, Michigan",
 		type: "bullets",
 		bullets: [
-			"Enable over 13 million sellers to sell goods globally on Amazon",
+			"Enable millions of sellers to sell goods globally on Amazon",
 			"Conduct numerous large-scale migrations and code changes to modernize services",
 			"Develop a novel tool to diagnose Seller Support issues, facilitating easier debugging for engineering teams",
 			"Reduce maintenance overhead by aiding in deprecating and distributing responsibilities of legacy services"
