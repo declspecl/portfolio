@@ -20,22 +20,58 @@ export const projects: Project[] = [
 		},
 		screenshots: [
 			{
-				src: "/images/unifit/home.png",
-				alt: "UniFit home page",
-				width: 1280,
-				height: 1020
+				name: "UniFit home page",
+				mobile: {
+					src: "/images/unifit/home-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/unifit/home-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/unifit/home-740w.webp",
+					width: 740,
+					height: 590
+				}
 			},
 			{
-				src: "/images/unifit/account.png",
-				alt: "UniFit account and meal plans page",
-				width: 1280,
-				height: 1020
+				name: "UniFit account and meal plans page",
+				mobile: {
+					src: "/images/unifit/account-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/unifit/account-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/unifit/account-740w.webp",
+					width: 740,
+					height: 590
+				}
 			},
 			{
-				src: "/images/unifit/builder.png",
-				alt: "UniFit meal plan preferences builder page",
-				width: 1280,
-				height: 1020
+				name: "UniFit meal plan preferences builder page",
+				mobile: {
+					src: "/images/unifit/builder-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/unifit/builder-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/unifit/builder-740w.webp",
+					width: 740,
+					height: 590
+				}
 			}
 		],
 		type: "bullets",
@@ -64,22 +100,76 @@ export const projects: Project[] = [
 		},
 		screenshots: [
 			{
-				src: "/images/personle/home.png",
-				alt: "Personle! home page",
-				width: 1280,
-				height: 1020
+				name: "Personle! home page",
+				mobile: {
+					src: "/images/personle/home-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/personle/home-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/personle/home-740w.webp",
+					width: 740,
+					height: 590
+				}
 			},
 			{
-				src: "/images/personle/daily.png",
-				alt: "Personle! daily play page",
-				width: 1280,
-				height: 1020
+				name: "Personle! daily play page",
+				mobile: {
+					src: "/images/personle/daily-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/personle/daily-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/personle/daily-740w.webp",
+					width: 740,
+					height: 590
+				}
 			},
 			{
-				src: "/images/personle/compendium.png",
-				alt: "Personle! compendium page",
-				width: 1280,
-				height: 1020
+				name: "Personle! daily play correct guess",
+				mobile: {
+					src: "/images/personle/daily-correct-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/personle/daily-correct-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/personle/daily-correct-740w.webp",
+					width: 740,
+					height: 590
+				}
+			},
+			{
+				name: "Personle! compendium page",
+				mobile: {
+					src: "/images/personle/compendium-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/personle/compendium-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/personle/compendium-740w.webp",
+					width: 740,
+					height: 590
+				}
 			}
 		],
 		type: "bullets",
@@ -98,28 +188,76 @@ export const projects: Project[] = [
 		},
 		screenshots: [
 			{
-				src: "/images/bookmarket/shop.png",
-				alt: "O.U. Bookmarket shop page",
-				width: 1280,
-				height: 1020
+				name: "O.U. Bookmarket shop page",
+				mobile: {
+					src: "/images/bookmarket/shop-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/bookmarket/shop-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/bookmarket/shop-740w.webp",
+					width: 740,
+					height: 590
+				}
 			},
 			{
-				src: "/images/bookmarket/comments.png",
-				alt: "O.U. Bookmarket comments page",
-				width: 1280,
-				height: 1020
+				name: "O.U. Bookmarket comments page",
+				mobile: {
+					src: "/images/bookmarket/comments-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/bookmarket/comments-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/bookmarket/comments-740w.webp",
+					width: 740,
+					height: 590
+				}
 			},
 			{
-				src: "/images/bookmarket/create-listing.png",
-				alt: "O.U. Bookmarket create listing page",
-				width: 1280,
-				height: 1020
+				name: "O.U. Bookmarket create listing page",
+				mobile: {
+					src: "/images/bookmarket/create-listing-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/bookmarket/create-listing-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/bookmarket/create-listing-740w.webp",
+					width: 740,
+					height: 590
+				}
 			},
 			{
-				src: "/images/bookmarket/signup.png",
-				alt: "O.U. Bookmarket signup page",
-				width: 1280,
-				height: 1020
+				name: "O.U. Bookmarket signup page",
+				mobile: {
+					src: "/images/bookmarket/signup-460w.webp",
+					width: 460,
+					height: 367
+				},
+				desktop: {
+					src: "/images/bookmarket/signup-350w.webp",
+					width: 350,
+					height: 279
+				},
+				magnified: {
+					src: "/images/bookmarket/signup-740w.webp",
+					width: 740,
+					height: 590
+				}
 			}
 		],
 		type: "bullets",

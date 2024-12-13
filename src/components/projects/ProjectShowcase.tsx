@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { LuGithub, LuGlobe } from "react-icons/lu";
 import ClassNames from "embla-carousel-class-names";
 import { TechnologyBadge } from "./TechnologyBadges";
-import { Project, Screenshot } from "@/lib/projects/model";
+import { Project, ProjectScreenshot } from "@/lib/projects/model";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
 
 interface ProjectShowcaseProps {
 	project: Project;
@@ -19,7 +19,7 @@ interface ProjectShowcaseProps {
 export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectShowcaseProps) {
 	const { name, summary, technologies, links, screenshots, ...rest } = project;
 
-	const [magnifiedScreenshot, setMagnifiedScreenshot] = useState<Screenshot | null>(null);
+	const [magnifiedScreenshot, setMagnifiedScreenshot] = useState<ProjectScreenshot | null>(null);
 
 	return (
 		<Dialog open={magnifiedScreenshot !== null}>
@@ -85,13 +85,23 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 				>
 					<CarouselContent className="mb-2">
 						{screenshots.map((screenshot) => (
-							<CarouselItem key={`project-${name}-screenshot-${screenshot.src}`} className="basis-3/4 opacity-30 transition-opacity duration-300">
+							<CarouselItem
+								key={`project-${name}-screenshot-${screenshot.name}`}
+								className="basis-3/4 opacity-30 transition-opacity duration-300"
+							>
 								<DialogTrigger
 									className="cursor-zoom-in"
 									aria-roledescription="magnify image"
 									onClick={() => setMagnifiedScreenshot(screenshot)}
 								>
-									<img loading="eager" src={screenshot.src} alt={screenshot.alt} className="rounded border" />
+									<img
+										loading="eager"
+										srcSet={`${screenshot.mobile.src} ${screenshot.mobile.width}w, ${screenshot.desktop.src} ${screenshot.desktop.width}w`}
+										sizes={`(max-width: 768px) ${screenshot.mobile.width}px, ${screenshot.desktop.width}px`}
+										src={screenshot.mobile.src}
+										alt={screenshot.name}
+										className="rounded border"
+									/>
 								</DialogTrigger>
 							</CarouselItem>
 						))}
@@ -106,18 +116,25 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 
 			<DialogContent xButtonOnClick={() => setMagnifiedScreenshot(null)}>
 				<DialogHeader>
-					<DialogTitle className="font-clash-display text-xl font-semibold xs:text-2xl">{magnifiedScreenshot?.alt}</DialogTitle>
+					<DialogTitle className="font-clash-display text-xl font-semibold xs:text-2xl">{magnifiedScreenshot?.name}</DialogTitle>
 				</DialogHeader>
 
-				<img loading="eager" src={magnifiedScreenshot?.src} alt={magnifiedScreenshot?.alt} srcSet={magnifiedScreenshot?.src} />
+				<img
+					loading="eager"
+					className="mx-auto border"
+					alt={magnifiedScreenshot?.name}
+					srcSet={`${magnifiedScreenshot?.mobile.src} ${magnifiedScreenshot?.mobile.width}w, ${magnifiedScreenshot?.magnified.src} ${magnifiedScreenshot?.magnified.width}w`}
+					sizes={`(max-width: 768px) ${magnifiedScreenshot?.mobile.width}px, ${magnifiedScreenshot?.magnified.width}px`}
+					src={magnifiedScreenshot?.magnified.src}
+				/>
 
-				<DialogFooter>
+				<div className="flex flex-row items-center justify-end">
 					<DialogClose asChild>
-						<Button size="sm" onClick={() => setMagnifiedScreenshot(null)}>
+						<Button onClick={() => setMagnifiedScreenshot(null)} className="w-fit">
 							Close
 						</Button>
 					</DialogClose>
-				</DialogFooter>
+				</div>
 			</DialogContent>
 		</Dialog>
 	);

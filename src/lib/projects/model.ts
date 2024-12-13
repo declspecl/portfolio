@@ -1,11 +1,17 @@
 import React from "react";
 import { Technology } from "@/lib/common";
 
-export interface Screenshot {
+export interface Picture {
 	src: string;
-	alt: string;
 	width: number;
 	height: number;
+}
+
+export interface ProjectScreenshot {
+	name: string;
+	mobile: Picture;
+	desktop: Picture;
+	magnified: Picture;
 }
 
 export interface ProjectDetails {
@@ -16,7 +22,7 @@ export interface ProjectDetails {
 		github?: string;
 		live?: string;
 	};
-	screenshots: Screenshot[];
+	screenshots: ProjectScreenshot[];
 }
 
 interface BulletedProjectDetails extends ProjectDetails {
