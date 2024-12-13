@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/Card";
 import { TimelineEntry } from "@/components/timeline/TimelineEntry";
 import { educationEntries, experienceEntries } from "@/lib/timeline/data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { SectionTitle } from "@/components/typography/SectionTitle";
 
 interface TimelineViewProps {
 	selectedView?: "experience" | "education";
@@ -14,7 +15,7 @@ export function TimelineView({ selectedView }: TimelineViewProps) {
 	return (
 		<section className="w-full" id="timeline">
 			{/* TODO: make this dynamic on selected tab */}
-			<h1 className="mb-2 font-clash-display text-5xl font-semibold">Experience</h1>
+			<SectionTitle text="Experience" />
 
 			<Tabs defaultValue="experience" id="education">
 				<TabsList className="grid w-full grid-cols-2">

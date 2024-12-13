@@ -2,11 +2,12 @@ import { projects } from "@/lib/projects/data";
 import { Separator } from "@/components/ui/Separator";
 import { Card, CardContent } from "@/components/ui/Card";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
+import { SectionTitle } from "@/components/typography/SectionTitle";
 
 export function ProjectsView() {
 	return (
 		<section id="projects">
-			<h1 className="mb-2 font-clash-display text-5xl font-semibold">Projects</h1>
+			<SectionTitle text="Projects" />
 
 			<Card>
 				{/* TODO: revisit and see if i like this more */}

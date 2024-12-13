@@ -11,7 +11,7 @@ export function HeroButtons() {
 				<a href="#experience">Learn more</a>
 			</Button>
 			<Button asChild>
-				<a href="/resume.pdf" target="_blank">
+				<a href="/static/resume.pdf" target="_blank">
 					Resumé
 				</a>
 			</Button>
@@ -28,7 +28,7 @@ export function HeroButtons() {
 					</a>
 				</Button>
 				<Button size="icon" asChild>
-					<a href="mailto:gavindhondt@hotmail.com">
+					<a href="mailto:gavindhondt@proton.me">
 						<LuMail />
 					</a>
 				</Button>

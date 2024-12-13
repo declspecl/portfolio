@@ -8,14 +8,14 @@ export function DesktopNavbar({ className }: DesktopNavbarProps) {
 	return (
 		<nav
 			className={cn(
-				"sticky top-8 z-10 mx-auto flex w-fit items-center justify-center gap-8 rounded-full border border-muted bg-background/80 px-8 py-3.5 backdrop-blur-sm",
+				"sticky top-4 z-10 mx-auto flex w-fit items-center justify-center gap-8 rounded-full border bg-background/80 px-8 py-3.5 backdrop-blur-sm",
 				className
 			)}
 		>
 			<NavbarLink href="#hero">About</NavbarLink>
 			<NavbarLink href="#timeline">Education/Education</NavbarLink>
 			<NavbarLink href="#projects">Projects</NavbarLink>
-			<NavbarLink href="/resume.pdf" openInNewTab>
+			<NavbarLink href="/static/resume.pdf" openInNewTab>
 				Resumé
 			</NavbarLink>
 			<NavbarLink href="https://blog.gavindhondt.com" openInNewTab>

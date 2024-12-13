@@ -25,10 +25,10 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 			})}
 		>
 			<div className="md:grow md:basis-0">
-				<h2 className="inline-flex flex-row items-center gap-4 font-clash-display text-4xl font-semibold">
-					{name}
+				<span className="mb-2 inline-flex flex-col gap-2 xs:mb-0 xs:flex-row xs:items-center xs:gap-4">
+					<h2 className="font-clash-display text-3xl font-semibold xs:text-4xl">{name}</h2>
 
-					<div className="flex flex-row gap-2">
+					<span className="inline-flex flex-row items-center gap-2">
 						<IconContext.Provider value={{ size: "1.25rem" }}>
 							{links?.github && (
 								<Button size="icon-sm" variant="default" asChild>
@@ -45,8 +45,8 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 								</Button>
 							)}
 						</IconContext.Provider>
-					</div>
-				</h2>
+					</span>
+				</span>
 				<p className="mb-2 text-base text-muted-foreground">{summary}</p>
 
 				{rest.type === "bullets" ? (
@@ -81,14 +81,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 				<CarouselContent className="mb-2">
 					{screenshots.map((screenshot) => (
 						<CarouselItem key={`project-${name}-screenshot-${screenshot.src}`} className="basis-3/4 opacity-30 transition-opacity duration-300">
-							<img
-								loading="eager"
-								src={screenshot.src}
-								alt={screenshot.alt}
-								width={screenshot.width}
-								height={screenshot.height}
-								className="rounded border"
-							/>
+							<img loading="eager" src={screenshot.src} alt={screenshot.alt} className="rounded border" />
 						</CarouselItem>
 					))}
 				</CarouselContent>

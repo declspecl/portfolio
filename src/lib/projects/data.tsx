@@ -20,19 +20,19 @@ export const projects: Project[] = [
 		},
 		screenshots: [
 			{
-				src: "/unifit-home.png",
+				src: "/images/unifit/home.png",
 				alt: "UniFit home page",
 				width: 1280,
 				height: 1020
 			},
 			{
-				src: "/unifit-account.png",
+				src: "/images/unifit/account.png",
 				alt: "UniFit account and meal plans page",
 				width: 1280,
 				height: 1020
 			},
 			{
-				src: "/unifit-builder.png",
+				src: "/images/unifit/builder.png",
 				alt: "UniFit meal plan preferences builder page",
 				width: 1280,
 				height: 1020
@@ -64,19 +64,19 @@ export const projects: Project[] = [
 		},
 		screenshots: [
 			{
-				src: "/personle-home.png",
+				src: "/images/personle/home.png",
 				alt: "Personle! home page",
 				width: 1280,
 				height: 1020
 			},
 			{
-				src: "/personle-daily.png",
+				src: "/images/personle/daily.png",
 				alt: "Personle! daily play page",
 				width: 1280,
 				height: 1020
 			},
 			{
-				src: "/personle-compendium.png",
+				src: "/images/personle/compendium.png",
 				alt: "Personle! compendium page",
 				width: 1280,
 				height: 1020

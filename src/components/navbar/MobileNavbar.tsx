@@ -11,13 +11,12 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="sticky top-8 z-10">
+		<div className={cn("sticky top-4 z-10", className)}>
 			<button
 				className={cn(
-					"mx-auto flex w-full flex-col items-center justify-center rounded-lg border border-muted bg-background/90 py-3.5 text-lg font-medium backdrop-blur-sm",
-					{ "rounded-lg border": !isOpen },
-					{ "rounded-lg rounded-b-none border border-b-0": isOpen },
-					className
+					"mx-auto flex w-full flex-col items-center justify-center border border-primary/40 bg-background py-3.5 text-lg font-medium backdrop-blur-sm transition-[border-color] hover:border-primary",
+					{ "rounded-2xl": !isOpen },
+					{ "rounded-2xl rounded-b-none border-b-primary/40": isOpen }
 				)}
 				onClick={() => setIsOpen(!isOpen)}
 			>
@@ -26,14 +25,20 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 
 			<nav
 				className={cn(
-					"absolute flex h-auto w-full flex-col items-center gap-2 rounded-b-lg border border-t-0 bg-background/90 py-4 backdrop-blur-sm transition-[height]",
-					{ "hidden h-0": !isOpen }
+					"absolute flex w-full flex-col items-center gap-2 rounded-b-2xl border border-t-0 border-primary/40 bg-background py-4 backdrop-blur-sm",
+					{ hidden: !isOpen }
 				)}
 			>
-				<NavbarLink href="#hero">About</NavbarLink>
-				<NavbarLink href="#timeline">Education/Education</NavbarLink>
-				<NavbarLink href="#projects">Projects</NavbarLink>
-				<NavbarLink href="/resume.pdf" openInNewTab>
+				<NavbarLink setIsOpen={setIsOpen} href="#hero">
+					About
+				</NavbarLink>
+				<NavbarLink setIsOpen={setIsOpen} href="#timeline">
+					Education/Education
+				</NavbarLink>
+				<NavbarLink setIsOpen={setIsOpen} href="#projects">
+					Projects
+				</NavbarLink>
+				<NavbarLink href="/static/resume.pdf" openInNewTab>
 					Resumé
 				</NavbarLink>
 				<NavbarLink href="https://blog.gavindhondt.com" openInNewTab>
@@ -45,20 +50,15 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 }
 
 interface NavbarLinkProps {
+	setIsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 	href: string;
 	openInNewTab?: boolean;
 	children: React.ReactNode;
 }
 
-function NavbarLink({ href, openInNewTab = false, children }: NavbarLinkProps) {
+function NavbarLink({ setIsOpen, href, openInNewTab = false, children }: NavbarLinkProps) {
 	return (
-		<a
-			href={href}
-			target={openInNewTab ? "_blank" : "_self"}
-			className={
-				"relative before:absolute before:bottom-0 before:left-1/2 before:h-[1px] before:w-0 before:-translate-x-1/2 before:bg-primary before:transition-[width] before:duration-200 before:content-[''] hover:before:w-full"
-			}
-		>
+		<a href={href} target={openInNewTab ? "_blank" : "_self"} className="hover:underline" onClick={() => setIsOpen && setIsOpen(false)}>
 			{children}
 		</a>
 	);
