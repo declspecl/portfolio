@@ -11,7 +11,7 @@ export function HeroButtons() {
 				<a href="#experience">Learn more</a>
 			</Button>
 			<Button asChild>
-				<a href="/static/resume.pdf" target="_blank">
+				<a href="/resume.pdf" target="_blank">
 					Resumé
 				</a>
 			</Button>

@@ -1,7 +1,19 @@
 import { cn } from "@/lib/utils";
 import { FaReact } from "react-icons/fa";
 import { Technology } from "@/lib/common";
-import { SiCplusplus, SiNextdotjs, SiNginx, SiPostgresql, SiSpringboot, SiTailwindcss, SiTypescript, SiVercel, SiVite } from "react-icons/si";
+import {
+	SiCplusplus,
+	SiGooglecloud,
+	SiNextdotjs,
+	SiNginx,
+	SiPostgresql,
+	SiSpringboot,
+	SiSqlite,
+	SiTailwindcss,
+	SiTypescript,
+	SiVercel,
+	SiVite
+} from "react-icons/si";
 import { FaAws, FaFigma, FaJava, FaPython, FaRust } from "react-icons/fa6";
 
 interface StaticBadgeProps {
@@ -48,6 +60,10 @@ export function PostgreSQLBadge() {
 	return <StaticBadge name={Technology.PostgreSQL} icon={<SiPostgresql />} className="bg-[#211b63]" />;
 }
 
+export function SQLiteBadge() {
+	return <StaticBadge name={Technology.SQLite} icon={<SiSqlite />} className="bg-[#044255]" />;
+}
+
 export function PythonBadge() {
 	return <StaticBadge name={Technology.Python} icon={<FaPython />} className="bg-[#7f720a]" />;
 }
@@ -80,6 +96,10 @@ export function AWSBadge() {
 	return <StaticBadge name={Technology.AWS} icon={<FaAws />} className="bg-[#141f2e]" />;
 }
 
+export function GCPBadge() {
+	return <StaticBadge name={Technology.GCP} icon={<SiGooglecloud />} className="bg-[#81271f]" />;
+}
+
 export function NginxBadge() {
 	return <StaticBadge name={Technology.Nginx} icon={<SiNginx />} className="bg-[#0c5a29]" />;
 }
@@ -102,6 +122,8 @@ export function TechnologyBadge({ technology }: TechnologyBadgeProps) {
 			return <TailwindCSSBadge />;
 		case Technology.PostgreSQL:
 			return <PostgreSQLBadge />;
+		case Technology.SQLite:
+			return <SQLiteBadge />;
 		case Technology.Python:
 			return <PythonBadge />;
 		case Technology.Rust:
@@ -118,6 +140,8 @@ export function TechnologyBadge({ technology }: TechnologyBadgeProps) {
 			return <SpringBootBadge />;
 		case Technology.AWS:
 			return <AWSBadge />;
+		case Technology.GCP:
+			return <GCPBadge />;
 		case Technology.Nginx:
 			return <NginxBadge />;
 	}

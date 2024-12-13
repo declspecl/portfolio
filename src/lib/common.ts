@@ -5,6 +5,7 @@ export enum Technology {
 	NextJS = "Next.js",
 	TailwindCSS = "TailwindCSS",
 	PostgreSQL = "PostgreSQL",
+	SQLite = "SQLite",
 	Python = "Python",
 	Rust = "Rust",
 	CPP = "C++",
@@ -13,5 +14,6 @@ export enum Technology {
 	Java = "Java",
 	SpringBoot = "Spring Boot",
 	AWS = "AWS",
+	GCP = "GCP",
 	Nginx = "Nginx"
 }

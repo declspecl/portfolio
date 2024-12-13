@@ -29,7 +29,7 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 					{ hidden: !isOpen }
 				)}
 			>
-				<NavbarLink setIsOpen={setIsOpen} href="#hero">
+				<NavbarLink setIsOpen={setIsOpen} href="#about">
 					About
 				</NavbarLink>
 				<NavbarLink setIsOpen={setIsOpen} href="#timeline">
@@ -38,7 +38,7 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 				<NavbarLink setIsOpen={setIsOpen} href="#projects">
 					Projects
 				</NavbarLink>
-				<NavbarLink href="/static/resume.pdf" openInNewTab>
+				<NavbarLink href="/resume.pdf" openInNewTab>
 					Resumé
 				</NavbarLink>
 				<NavbarLink href="https://blog.gavindhondt.com" openInNewTab>

@@ -12,10 +12,10 @@ export function DesktopNavbar({ className }: DesktopNavbarProps) {
 				className
 			)}
 		>
-			<NavbarLink href="#hero">About</NavbarLink>
+			<NavbarLink href="#about">About</NavbarLink>
 			<NavbarLink href="#timeline">Education/Education</NavbarLink>
 			<NavbarLink href="#projects">Projects</NavbarLink>
-			<NavbarLink href="/static/resume.pdf" openInNewTab>
+			<NavbarLink href="/resume.pdf" openInNewTab>
 				Resumé
 			</NavbarLink>
 			<NavbarLink href="https://blog.gavindhondt.com" openInNewTab>

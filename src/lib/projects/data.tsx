@@ -88,5 +88,45 @@ export const projects: Project[] = [
 			"Achieved 99.9% uptime through automated CDK IaC pipelines on a self-hosted VPS",
 			"Applied creative and accessible UI styling techniques to mimic the complex art style of Persona 5"
 		]
+	},
+	{
+		name: "O.U. Bookmarket",
+		summary: "Full-stack textbook resale marketplace for Oakland University students",
+		technologies: [Technology.React, Technology.TypeScript, Technology.Java, Technology.SpringBoot, Technology.SQLite, Technology.GCP, Technology.Figma],
+		links: {
+			github: "https://github.com/declspecl/bookmarket"
+		},
+		screenshots: [
+			{
+				src: "/images/bookmarket/shop.png",
+				alt: "O.U. Bookmarket shop page",
+				width: 1280,
+				height: 1020
+			},
+			{
+				src: "/images/bookmarket/comments.png",
+				alt: "O.U. Bookmarket comments page",
+				width: 1280,
+				height: 1020
+			},
+			{
+				src: "/images/bookmarket/create-listing.png",
+				alt: "O.U. Bookmarket create listing page",
+				width: 1280,
+				height: 1020
+			},
+			{
+				src: "/images/bookmarket/signup.png",
+				alt: "O.U. Bookmarket signup page",
+				width: 1280,
+				height: 1020
+			}
+		],
+		type: "bullets",
+		bullets: [
+			"Led a team of 4 student developers to deliver and deploy a production application in 10 weeks",
+			"Designated tasks using Agile methodologies, Kanban, and weekly scrum meetings to ensure timely completion of features",
+			"Created numerous reports and diagrams documenting the application's design, business requirements, and implementation"
+		]
 	}
 ];

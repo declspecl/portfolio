@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/Card";
+import { SectionTitle } from "@/components/typography/SectionTitle";
 import { TimelineEntry } from "@/components/timeline/TimelineEntry";
 import { educationEntries, experienceEntries } from "@/lib/timeline/data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
-import { SectionTitle } from "@/components/typography/SectionTitle";
 
 interface TimelineViewProps {
 	selectedView?: "experience" | "education";

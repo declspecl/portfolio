@@ -25,7 +25,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 			})}
 		>
 			<div className="md:grow md:basis-0">
-				<span className="mb-2 inline-flex flex-col gap-2 xs:mb-0 xs:flex-row xs:items-center xs:gap-4">
+				<span className="mb-2 inline-flex flex-col gap-2 xs:mb-0 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4">
 					<h2 className="font-clash-display text-3xl font-semibold xs:text-4xl">{name}</h2>
 
 					<span className="inline-flex flex-row items-center gap-2">

@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/typography/SectionTitle";
 
 export function HeroSection() {
 	return (
-		<section id="hero" className="mx-auto max-w-[40rem]">
+		<section id="about" className="mx-auto max-w-[40rem]">
 			<SectionTitle text="Hi, I'm Gavin D'Hondt." />
 
 			<div className="mb-2 text-base">
