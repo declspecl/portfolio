@@ -4,33 +4,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 const clashDisplay = localFont({
-	src: [
-		{
-			path: "./fonts/ClashDisplay-Variable.woff2"
-		},
-		{
-			path: "./fonts/ClashDisplay-Variable.woff"
-		},
-		{
-			path: "./fonts/ClashDisplay-Variable.ttf"
-		}
-	],
+	src: "./fonts/ClashDisplay-Variable.woff2",
 	variable: "--font-clash-display",
 	weight: "200 700"
 });
 
 const satoshi = localFont({
-	src: [
-		{
-			path: "./fonts/Satoshi-Variable.woff2"
-		},
-		{
-			path: "./fonts/Satoshi-Variable.woff"
-		},
-		{
-			path: "./fonts/Satoshi-Variable.ttf"
-		}
-	],
+	src: "./fonts/Satoshi-Variable.woff2",
 	variable: "--font-satoshi",
 	weight: "300 900"
 });

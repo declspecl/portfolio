@@ -8,8 +8,8 @@ import { LuGithub, LuGlobe } from "react-icons/lu";
 import ClassNames from "embla-carousel-class-names";
 import { Project, ProjectScreenshot } from "@/lib/projects/model";
 import { TechnologyBadge } from "@/components/common/TechnologyBadges";
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/Dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
-import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
 
 interface ProjectShowcaseProps {
 	project: Project;
@@ -89,11 +89,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 								key={`project-${name}-screenshot-${screenshot.name}`}
 								className="basis-3/4 opacity-30 transition-opacity duration-300"
 							>
-								<DialogTrigger
-									className="cursor-zoom-in"
-									aria-roledescription="magnify image"
-									onClick={() => setMagnifiedScreenshot(screenshot)}
-								>
+								<button className="cursor-zoom-in" aria-roledescription="magnify image" onClick={() => setMagnifiedScreenshot(screenshot)}>
 									<img
 										loading="eager"
 										srcSet={`${screenshot.mobile.src} ${screenshot.mobile.width}w, ${screenshot.desktop.src} ${screenshot.desktop.width}w`}
@@ -104,7 +100,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 										alt={screenshot.name}
 										className="rounded border"
 									/>
-								</DialogTrigger>
+								</button>
 							</CarouselItem>
 						))}
 					</CarouselContent>
