@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface DesktopNavbarProps {
@@ -18,7 +19,7 @@ export function DesktopNavbar({ className }: DesktopNavbarProps) {
 			<NavbarLink href="/resume.pdf" openInNewTab>
 				Resumé
 			</NavbarLink>
-			<NavbarLink href="https://blog.gavindhondt.com" openInNewTab>
+			<NavbarLink href="/blog" useClientSideRouting>
 				Blog
 			</NavbarLink>
 		</nav>
@@ -28,12 +29,15 @@ export function DesktopNavbar({ className }: DesktopNavbarProps) {
 interface NavbarLinkProps {
 	href: string;
 	openInNewTab?: boolean;
+	useClientSideRouting?: boolean;
 	children: React.ReactNode;
 }
 
-function NavbarLink({ href, openInNewTab = false, children }: NavbarLinkProps) {
+function NavbarLink({ href, openInNewTab = false, useClientSideRouting, children }: NavbarLinkProps) {
+	const Comp = useClientSideRouting ? Link : "a";
+
 	return (
-		<a
+		<Comp
 			href={href}
 			target={openInNewTab ? "_blank" : "_self"}
 			className={
@@ -41,6 +45,6 @@ function NavbarLink({ href, openInNewTab = false, children }: NavbarLinkProps) {
 			}
 		>
 			{children}
-		</a>
+		</Comp>
 	);
 }

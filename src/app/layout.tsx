@@ -2,6 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { GridBackground } from "@/components/graphics/GridBackground";
 
 const clashDisplay = localFont({
 	src: "./fonts/ClashDisplay-Variable.woff2",
@@ -36,7 +37,11 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
 	return (
 		<html lang="en">
-			<body className={`${clashDisplay.variable} ${satoshi.variable} antialiased`}>{children}</body>
+			<body className={`${clashDisplay.variable} ${satoshi.variable} relative antialiased`}>
+				<GridBackground className="absolute inset-0 h-full min-h-screen w-full" />
+
+				{children}
+			</body>
 		</html>
 	);
 }

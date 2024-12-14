@@ -1,7 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface MobileNavbarProps {
 	className?: string;
@@ -41,7 +42,7 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 				<NavbarLink href="/resume.pdf" openInNewTab>
 					Resumé
 				</NavbarLink>
-				<NavbarLink href="https://blog.gavindhondt.com" openInNewTab>
+				<NavbarLink href="/blog" useClientSideRouting>
 					Blog
 				</NavbarLink>
 			</nav>
@@ -53,13 +54,16 @@ interface NavbarLinkProps {
 	setIsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 	href: string;
 	openInNewTab?: boolean;
+	useClientSideRouting?: boolean;
 	children: React.ReactNode;
 }
 
-function NavbarLink({ setIsOpen, href, openInNewTab = false, children }: NavbarLinkProps) {
+function NavbarLink({ setIsOpen, href, openInNewTab = false, useClientSideRouting, children }: NavbarLinkProps) {
+	const Comp = useClientSideRouting ? Link : "a";
+
 	return (
-		<a href={href} target={openInNewTab ? "_blank" : "_self"} className="hover:underline" onClick={() => setIsOpen && setIsOpen(false)}>
+		<Comp href={href} target={openInNewTab ? "_blank" : "_self"} className="hover:underline" onClick={() => setIsOpen && setIsOpen(false)}>
 			{children}
-		</a>
+		</Comp>
 	);
 }
