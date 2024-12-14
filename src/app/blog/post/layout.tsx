@@ -8,7 +8,7 @@ export default function MdxLayout({ children }: MdxLayoutProps) {
 	return (
 		<div
 			className={clsx(
-				"prose font-satoshi text-foreground prose-strong:text-foreground",
+				"prose mx-auto font-satoshi text-foreground prose-strong:text-foreground",
 				"prose-headings:mb-2 prose-headings:font-clash-display prose-headings:font-semibold prose-headings:text-foreground",
 				"prose-h1:text-5xl",
 				"prose-h2:text-4xl",
