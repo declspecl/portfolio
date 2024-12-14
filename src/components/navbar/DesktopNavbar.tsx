@@ -13,14 +13,23 @@ export function DesktopNavbar({ className }: DesktopNavbarProps) {
 				className
 			)}
 		>
-			<NavbarLink href="#about">About</NavbarLink>
-			<NavbarLink href="#timeline">Education/Education</NavbarLink>
-			<NavbarLink href="#projects">Projects</NavbarLink>
-			<NavbarLink href="/resume.pdf" openInNewTab>
-				Resumé
+			<NavbarLink href="/" useClientSideRouting>
+				Home
+			</NavbarLink>
+			<NavbarLink href="/#about" useClientSideRouting>
+				About
+			</NavbarLink>
+			<NavbarLink href="/#timeline" useClientSideRouting>
+				Experience/Education
+			</NavbarLink>
+			<NavbarLink href="/#projects" useClientSideRouting>
+				Projects
 			</NavbarLink>
 			<NavbarLink href="/blog" useClientSideRouting>
 				Blog
+			</NavbarLink>
+			<NavbarLink href="/resume.pdf" openInNewTab>
+				Resumé
 			</NavbarLink>
 		</nav>
 	);

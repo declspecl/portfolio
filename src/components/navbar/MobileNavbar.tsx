@@ -30,20 +30,23 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 					{ hidden: !isOpen }
 				)}
 			>
-				<NavbarLink setIsOpen={setIsOpen} href="#about">
+				<NavbarLink href="/" setIsOpen={setIsOpen} useClientSideRouting>
+					Home
+				</NavbarLink>
+				<NavbarLink href="/#about" setIsOpen={setIsOpen} useClientSideRouting>
 					About
 				</NavbarLink>
-				<NavbarLink setIsOpen={setIsOpen} href="#timeline">
-					Education/Education
+				<NavbarLink href="/#timeline" setIsOpen={setIsOpen} useClientSideRouting>
+					Experience/Education
 				</NavbarLink>
-				<NavbarLink setIsOpen={setIsOpen} href="#projects">
+				<NavbarLink href="/#projects" setIsOpen={setIsOpen} useClientSideRouting>
 					Projects
 				</NavbarLink>
-				<NavbarLink href="/resume.pdf" openInNewTab>
-					Resumé
-				</NavbarLink>
-				<NavbarLink href="/blog" useClientSideRouting>
+				<NavbarLink href="/blog" setIsOpen={setIsOpen} useClientSideRouting>
 					Blog
+				</NavbarLink>
+				<NavbarLink href="/resume.pdf" setIsOpen={setIsOpen} openInNewTab>
+					Resumé
 				</NavbarLink>
 			</nav>
 		</div>

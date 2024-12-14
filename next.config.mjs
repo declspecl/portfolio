@@ -1,4 +1,4 @@
-import createMdx from "@next/mdx";
+import createMDX from "@next/mdx";
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -10,6 +10,6 @@ const config = {
 	}
 };
 
-const withMdx = createMdx({});
+const withMDX = createMDX({});
 
-export default withMdx(config);
+export default withMDX(config);

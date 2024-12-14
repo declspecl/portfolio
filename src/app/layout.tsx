@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GridBackground } from "@/components/graphics/GridBackground";
+import { ResponsiveContainer } from "@/components/layout/ResponsiveContainer";
+import { Navbar } from "@/views/Navbar";
 
 const clashDisplay = localFont({
 	src: "./fonts/ClashDisplay-Variable.woff2",
@@ -40,7 +42,15 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
 			<body className={`${clashDisplay.variable} ${satoshi.variable} relative antialiased`}>
 				<GridBackground className="absolute inset-0 h-full min-h-screen w-full" />
 
-				{children}
+				<ResponsiveContainer>
+					<main className="p-8 font-satoshi">
+						<Navbar />
+
+						<div className="my-8 sm:my-24" />
+
+						{children}
+					</main>
+				</ResponsiveContainer>
 			</body>
 		</html>
 	);
