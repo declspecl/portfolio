@@ -18,17 +18,17 @@ export function HeroButtons() {
 
 			<IconContext.Provider value={{ size: "1.5rem" }}>
 				<Button size="icon" asChild>
-					<a href="https://github.com/declspecl" target="_blank">
+					<a href="https://github.com/declspecl" target="_blank" aria-label="GitHub link">
 						<LuGithub />
 					</a>
 				</Button>
 				<Button size="icon" asChild>
-					<a href="https://www.linkedin.com/in/gavindhondt/" target="_blank">
+					<a href="https://www.linkedin.com/in/gavindhondt/" target="_blank" aria-label="Linkedin link">
 						<LuLinkedin />
 					</a>
 				</Button>
 				<Button size="icon" asChild>
-					<a href="mailto:gavindhondt@proton.me">
+					<a href="mailto:gavindhondt@proton.me" aria-label="Email link">
 						<LuMail />
 					</a>
 				</Button>

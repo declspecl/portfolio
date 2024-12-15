@@ -37,14 +37,14 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 							<IconContext.Provider value={{ size: "1.25rem" }}>
 								{links?.github && (
 									<Button size="icon-sm" variant="default" asChild>
-										<a href={links.github} target="_blank">
+										<a href={links.github} target="_blank" aria-label={`${project.name} GitHub link`}>
 											<LuGithub />
 										</a>
 									</Button>
 								)}
 								{links?.live && (
 									<Button size="icon-sm" asChild>
-										<a href={links.live} target="_blank">
+										<a href={links.live} target="_blank" aria-label={`${project.name} live site link`}>
 											<LuGlobe />
 										</a>
 									</Button>
@@ -106,8 +106,8 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 					</CarouselContent>
 
 					<div className="flex flex-row items-center justify-center gap-2">
-						<CarouselPrevious />
-						<CarouselNext />
+						<CarouselPrevious aria-label={`${project.name} carousel previous button`} />
+						<CarouselNext aria-label={`${project.name} carousel next button`} />
 					</div>
 				</Carousel>
 			</div>
