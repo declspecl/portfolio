@@ -1,11 +1,12 @@
-import { BlogPostPreview, BlogPostTag } from "./model";
+import { BlogPostMetadata, BlogPostTag } from "./model";
 
-export const blogPosts: BlogPostPreview[] = [
+export const blogPosts: BlogPostMetadata[] = [
 	{
-		title: "Sample Blog Post",
-		description: "This is a sample blog post. It's just a placeholder for now.",
-		createdAt: new Date(2024, 11, 13),
-		tags: Object.keys(BlogPostTag) as BlogPostTag[],
-		href: "/blog/post/sample"
+		title: "Writing Java Can Actually be Enjoyable!",
+		description:
+			"How I learned to actually enjoy writing Java code after disliking it for so long. And why I'm using Java for my many of my personal projects instead of Rust.",
+		createdAt: new Date(2024, 11, 14),
+		tags: [BlogPostTag.Technical, BlogPostTag.Educational],
+		href: "/blog/post/making-java-enjoyable"
 	}
 ];

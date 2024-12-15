@@ -1,0 +1,277 @@
+# Writing Java Can Actually be Enjoyable!
+
+I used to dislike writing Java.
+It's clunky, old, verbose, has tons of boilerplate, and is just not fun to write (cue Java bureaucracy).
+I also have some fundamental complaints about the language since I'm a nerd about programming language design:
+
+- Shoving heavy OOP down your throat (but don't get me wrong, what <a href="https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/top-level-statements#start-exploring" target="_blank">C# is doing with top-level statements</a> is WAY worse)
+- `final` is not really final, and there is no real `const`.
+  `final` does not make objects immutable, it just makes the reference immutable
+- This isn't a fault of the language per se, but the standard to encapsulate every field in a class, even when there is no change in behavior to just exposing the fields as public
+
+But really, these are just nitpicks and do not largely affect the language's usability.
+And in the latest LTS versions of Java, notably 17 and 21, the language has some really cool features that improve the Java DX a ton.
+As I've started working at Amazon which uses Java extensively, I've also learned of many great packages that overall make Java development pretty enjoyable.
+
+Currently, I reach for Rust for every project, but when I need to use several AWS services, or I anticipate a heavily OOP backend structure, I reach for Java.
+The AWS SDK for Rust is not bad but is miles behind the Java SDK, expectedly.
+Java also has a much richer ecosystem of libraries, frameworks, and testing utilities for services, so I will reach for Java in cases where I feel that I will need those.
+
+## What's Nice About Java Development
+
+- **Optionals**:
+
+    These have been around since Java 8, but I think they're a great and underused feature.
+    They're similar to Rust's `Option` type, and they're a great way to handle nulls in a typesafe way.
+    Some people have strong opinions on if we should use `Optional`s as class members, but I say why not?
+    I use them exclusively instead of `null` in my code, which makes me a lot more confident about the state of my data.
+
+    ```java
+    // no ambiguity about if this method can fail or not
+    public Optional<String> getMiddleName() {
+        String[] parts = this.name.split(" ");
+        if (parts.length == 3) {
+            return Optional.of(parts[1]);
+        }
+
+        return Optional.empty();
+    }
+    ```
+
+- **Records**:
+
+    First introduced into the LTS channel with Java 17, record types are concise, immutable data carriers.
+    Do you return `String`s from methods and wish there was a more descriptive way?
+    Just make a record.
+
+    ```java
+    public record QueryExecutionId(String id) {}
+
+    // ...
+
+    public QueryExecutionId makeQuery() {
+        String executionId = service.query();
+
+        return new QueryExecutionId(executionId);
+    }
+    ```
+
+    Defining a typesafe relational DB table schema?
+
+    ```java
+    public record Column(String name, int index) {}
+
+    // ...
+
+    public class UsersTable {
+        public enum TableColumn {
+            ID(new Column("id", 0)),
+            NAME(new Column("name", 1)),
+            EMAIL(new Column("email", 2));
+
+            private final Column column;
+
+            TableColumn(Column column) {
+                this.column = column;
+            }
+
+            public Column getColumn() {
+                return column;
+            }
+        }
+    }
+    ```
+
+    They just remove a lot of guesswork and boilerplate from your code.
+    Definitely try them out if you haven't yet.
+
+- **Streams**:
+
+    This is a small thing, but I love the stream API: they're super ergonomic and make code easier to read.
+    They feel very similar to Rust's iterators, which I also love.
+    Take these examples:
+
+    ```java
+    private Set<Bar> getBarsFromCoolFoos(List<Foo> foos) {
+        return foos.stream()
+            .filter(foo -> foo.isCool()) // or just Foo::isCool
+            .map(foo -> foo.getBar()) // or just Foo::getBar
+            .collect(Collectors.toSet());
+    }
+
+    private HashMap<String, Baz> getBazByName(List<Baz> bazs) {
+        return bazs.stream()
+            .collect(Collectors.toMap(
+                b -> b.getName(), // or just Baz::getName
+                b -> b
+            ));
+    }
+    ```
+
+    compared to the imperative equivalent:
+
+    ```java
+    private Set<Bar> getBarsFromCoolFoos(List<Foo> foos) {
+        Set<Bar> bars = new HashSet<>();
+
+        for (Foo foo : foos) {
+            if (foo.isCool()) {
+                bars.add(foo.getBar());
+            }
+        }
+
+        return bars;
+    }
+
+    private HashMap<String, Baz> getBazByName(List<Baz> bazs) {
+        HashMap<String, Baz> bazByName = new HashMap<>();
+
+        for (Baz baz : bazs) {
+            bazByName.put(baz.getName(), baz);
+        }
+
+        return bazByName;
+    }
+    ```
+
+- **Pattern matching**:
+
+    There's more to pattern matching than just `instanceof`, but its the case I use the most.
+    This was totally reproducible before pattern matching was officially added by just typecasting, but it's a lot more ergonomic now.
+
+    ```java
+    public void doSomething(SuperClass obj) {
+        if (obj instanceof SubClassA a) {
+            a.doActionA();
+        }
+        else if (obj instanceof SubClassB b) {
+            b.doActionB();
+        }
+    }
+    ```
+
+- **var**:
+
+    No explanation needed.
+    No more `AbstractSingletonProxyFactoryBean` or `ConcurrentHashMap<String, List<ConcurrentHashMap<String, List<String>>>>`.
+    Thank you, Java 🙏
+
+- **Dependency injection**:
+
+    This is controversial, but I actually really like dependency injection using <a href="https://spring.io/" target="_blank">Spring</a> or <a href="https://github.com/google/guice" target="_blank">Google Guice</a>.
+    The idea is kind of dumb:
+
+    > You know, we create a lot of these object things.
+    > Why don't we make them all global on startup and then pick from them when we want to!
+
+    But in practice, especially in a <a href="https://en.wikipedia.org/wiki/Service-oriented_architecture" target="_blank">Service-Oriented Architecture</a>, it's really nice to have a single place to declaratively configure all the application's working parts, and then declaratively pull them into your classes when needed.
+    Although Java is definitely **not** the language people think in the whole "ship fast" mentality, I feel more efficient writing code with dependency injection than without.
+
+- **AWS SDK**:
+
+    Although this is a bit biased, the <a href="https://aws.amazon.com/sdk-for-java/" target="_blank">AWS SDK for Java</a> is fantastic, and of course since Amazon uses a ton of Java, you know the Java SDK is top notch.
+    Most of the service's requests and responses fit the builder pattern really well, and in Java this is just really ergonomic.
+    One great feature in the SDK for Java is the ability to <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/enhanced/dynamodb/mapper/annotations/DynamoDbBean.html" target="_blank">create DynamoDB schemas from Java classes</a>, and easily abstract the data layer.
+    So for example, you could have a (minimized) <a href="https://github.com/declspecl/personle/blob/main/personle-api/src/main/java/com/declspecl/dependencies/dynamodb/DailyGuessesItem.java" target="_blank">class like this</a>:
+
+    ```java
+    @DynamoDbBean
+    public class DailyGuessesItem {
+        private String pk;
+        private String sk;
+
+        @DynamoDbPartitionKey
+        @DynamoDbAttribute("pk")
+        public String getPk() {
+            return pk;
+        }
+
+        @DynamoDbSortKey
+        @DynamoDbAttribute("sk")
+        public String getSk() {
+            return sk;
+        }
+    }
+    ```
+
+    and easily wire up to a typesafe DAO for every API:
+
+    ```java
+    var ddbTable = ddbClient.table(
+        "myTableName",
+        TableSchema.fromBean(DailyGuessesItem.class)
+    );
+
+    ddbTable.putItem(dailyGuessesItem);
+
+    DailyGuessesItem item = ddbTable.getItem(pk, sk);
+    ```
+
+    In this case `converter` is an object that converts my domain model to the `DailyGuessesItem` you see above.
+
+## Must-Use Packages
+
+Barebones Java feels exactly that way, barebones.
+I feel like the language just leaves you susceptible to a lot of codesmells and overly imperative code.
+
+Here's a list of packages I use in basically every project:
+
+- <a href="https://projectlombok.org/" target="_blank">Lombok</a>:
+
+    A ubiquitous must-have for Java development.
+    It adds a ton of useful annotations that remove a lot of boilerplate from your code, like `@EqualsAndHashCode`, `@ToString`, and `@Builder`.
+    Be sure to also install the <a href="https://projectlombok.org/setup/intellij" target="_blank">Lombok plugin</a> if using IntelliJ IDEA for full support.
+    Some people dislike Annotation-Driven Development, the Java special, but these annotations aren't even magic; they just write the code that you would have anyways.
+
+- <a href="https://immutables.github.io/" target="_blank">Immutables</a>:
+
+    Immutables is my absolute go-to for domain modeling.
+    It forces immutability on your objects, which reduces the chance of bugs, and provides some great QoL features.
+    It has some overlap with Lombok, but my strategy is to use Lombok for data classes and Immutables for domain classes.
+
+    This is an example of what an Immutables class looks like:
+
+    ```java
+    @Value.Immutable
+    @Value.Style(init = "with*", get = { "get*", "is*" })
+    public abstract class User {
+        public abstract String name();
+        public abstract boolean isCool();
+        public abstract Optional<Integer> age();
+    }
+
+    // ...
+
+    User user = ImmutableUser.builder()
+        .withName("someName")
+        .withIsCool(true)
+        .withAge(21)
+        .build();
+
+    System.out.println(user.getName());
+    System.out.println(user.getAge().get());
+    System.out.println(user.isCool());
+    ```
+
+- <a href="https://github.com/google/guava" target="_blank">Google Guava</a>:
+
+    Guava is a great utility library that fills the gaps of what Java's standard library is missing.
+    It has a great set of caching helpers, like `CacheBuilder` and `LoadingCache`.
+    It also has some nice utility functions:
+
+    - `Preconditions.checkArgument`
+    - `ImmutableList.of`
+    - `ImmutableMap.of`
+    - `Hashing.sha256`
+    - `Hashing.hmacSha256`
+
+- <a href="https://commons.apache.org/proper/commons-lang/" target="_blank">Apache Commons Lang</a>:
+
+    Another small library of utility methods.
+    Some useful functions from here are:
+
+    - `StringUtils.isEmpty`
+    - `StringUtils.isBlank`
+    - `CollectionUtils.isEmpty`
+    - `ArrayUtils.isEmpty`
+    - `RandomUtils.nextInt`

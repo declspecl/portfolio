@@ -1,17 +1,18 @@
 import Link from "next/link";
 import { LuCalendar } from "react-icons/lu";
 import { Button } from "@/components/ui/Button";
-import { BlogPostPreview } from "@/lib/blog/model";
+import { BlogPostMetadata } from "@/lib/blog/model";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
 import { BlogPostBadge } from "./BlogPostBadge";
 
 interface BlogPostCardProps {
-	post: BlogPostPreview;
+	post: BlogPostMetadata;
+	className?: string;
 }
 
-export function BlogPostCard({ post }: BlogPostCardProps) {
+export function BlogPostCard({ post, className }: BlogPostCardProps) {
 	return (
-		<Card>
+		<Card className={className}>
 			<CardHeader>
 				<CardTitle>{post.title}</CardTitle>
 				<CardDescription className="inline-flex flex-row items-center gap-1">

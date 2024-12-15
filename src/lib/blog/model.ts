@@ -6,7 +6,7 @@ export enum BlogPostTag {
 	Philosophical = "Philosophical"
 }
 
-export interface BlogPostPreview {
+export interface BlogPostMetadata {
 	title: string;
 	description: string;
 	createdAt: Date;

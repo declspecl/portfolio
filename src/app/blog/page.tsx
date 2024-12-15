@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { blogPosts } from "@/lib/blog/data";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { SectionTitle } from "@/components/typography/SectionTitle";
@@ -16,8 +17,12 @@ export default function BlogPage() {
 				<SectionTitle text="Post Gallery" />
 
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-					{blogPosts.map((post) => (
-						<BlogPostCard key={`blog-post-${post.title}`} post={post} />
+					{blogPosts.map((post, i) => (
+						<BlogPostCard
+							key={`blog-post-${post.title}`}
+							post={post}
+							className={clsx("col-span-1", { "col-span-2": blogPosts.length % 2 !== 0 && i === blogPosts.length - 1 })}
+						/>
 					))}
 				</div>
 			</section>
