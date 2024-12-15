@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.8
 		},
 		{
-			url: "https://www.gavindhondt.com/making-java-enjoyable",
+			url: "https://www.gavindhondt.com/blog/post/making-java-enjoyable",
 			lastModified: new Date(),
 			changeFrequency: "never",
 			priority: 0.2
