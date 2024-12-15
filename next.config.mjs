@@ -5,7 +5,7 @@ import rehypeStarryNight from "rehype-starry-night";
 /** @type {import("next").NextConfig} */
 const config = {
 	output: "export",
-	pageExtensions: ["tsx", "mdx"],
+	pageExtensions: ["ts", "tsx", "md", "mdx"],
 	reactStrictMode: true,
 	images: {
 		unoptimized: true

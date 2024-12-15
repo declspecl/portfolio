@@ -1,10 +1,10 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import { Navbar } from "@/views/Navbar";
 import localFont from "next/font/local";
 import { GridBackground } from "@/components/graphics/GridBackground";
 import { ResponsiveContainer } from "@/components/layout/ResponsiveContainer";
-import { Navbar } from "@/views/Navbar";
 
 const clashDisplay = localFont({
 	src: "./fonts/ClashDisplay-Variable.woff2",
