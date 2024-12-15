@@ -10,3 +10,13 @@ export const blogPosts: BlogPostMetadata[] = [
 		href: "/blog/post/making-java-enjoyable"
 	}
 ];
+
+export const journalPosts: BlogPostMetadata[] = [
+	{
+		title: "Why am I afraid of the things I yearn for?",
+		description: "Some things that I want to do but am afraid to, and a small retrospective on why this might be.",
+		createdAt: new Date(2024, 11, 15),
+		tags: [BlogPostTag.Personal, BlogPostTag.Sad],
+		href: "/blog/post/afraid-of-yearning"
+	}
+];
