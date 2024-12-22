@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { blogPosts, journalPosts } from "@/lib/blog/data";
+import { blogPosts } from "@/lib/blog/data";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { SectionTitle } from "@/components/typography/SectionTitle";
 
@@ -31,7 +31,7 @@ export default function BlogPage() {
 
 			<div className="my-8 sm:my-12" />
 
-			<section>
+			{/* <section>
 				<SectionTitle text="Journal Gallery" />
 
 				<p>
@@ -51,7 +51,7 @@ export default function BlogPage() {
 						/>
 					))}
 				</div>
-			</section>
+			</section> */}
 		</main>
 	);
 }
