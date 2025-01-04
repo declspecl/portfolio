@@ -11,8 +11,12 @@ export function formatTimelineEntryDate(date: TimelineEntryDate | null): string 
 }
 
 export function formatDateRangeDifference(start: TimelineEntryDate, end: TimelineEntryDate): string {
-	const yearDifference = end.year - start.year;
-	const monthDifference = (end.monthNumber - start.monthNumber + 12) % 12;
+	let monthDifference = end.monthNumber - start.monthNumber;
+	let yearDifference = end.year - start.year;
+	while (monthDifference < 0) {
+		monthDifference += 12;
+		yearDifference -= 1;
+	}
 
 	const yearUnit = yearDifference === 1 ? "year" : "years";
 	const monthUnit = monthDifference === 1 ? "month" : "months";
