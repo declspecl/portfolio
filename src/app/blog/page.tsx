@@ -18,7 +18,7 @@ export default function BlogPage() {
 
 				<p className="mb-2">My blog are where I talk about stuff I find interesting. Stop by here to think and potentially learn something!</p>
 
-				<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+				<div className="grid grid-cols-1 gap-4">
 					{blogPosts.map((post, i) => (
 						<BlogPostCard
 							key={`blog-post-${post.title}`}

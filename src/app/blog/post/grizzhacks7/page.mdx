@@ -1,0 +1,142 @@
+# GrizzHacks 7
+
+Written 3/24/2025
+
+## Links
+
+- <a href="https://duckduckcode.tech" target="_blank">Website</a>
+- <a href="https://devpost.com/software/duckduckcode" target="_blank">Devpost</a>
+- <a href="https://github.com/orgs/DuckDuckCode-tech/repositories" target="_blank">GitHub</a>
+- <a href="https://youtu.be/q8YWrZACpDw?si=uwAoR-PhA-M1mtsx" target="_blank">Demo video</a>
+
+## Context
+
+This past weekend, March 22nd and 23rd 2025, I had the pleasure of attending the seventh rendition of GrizzHacks, Oakland University's hackathon!
+It's is a 24-hour coding competition where students come together to create projects, learn new technologies, and network with other students and professionals.
+This was my first hackathon, and I was thrilled to be participating with some of my favorite people.
+
+My team consisted of:
+- Myself (Gavin D'Hondt), <a href="https://www.linkedin.com/in/gavindhondt" target="_blank">LinkedIn</a>
+- BoiGia Phui (my lovely ~~wife~~ girlfriend), <a href="https://www.linkedin.com/in/boigia-phui" target="_blank">LinkedIn</a>
+- Anton Sakhanovych (my handsome ~~husband~~ ~~boyfriend~~ friend), <a href="https://www.linkedin.com/in/antonsakhanovych" target="_blank">LinkedIn</a>
+- Lisa Nguyen (my amazing friend), <a href="https://www.linkedin.com/in/nguyen8" target="_blank">LinkedIn</a>
+
+And together, we built <a href="https://duckduckcode.tech" target="_blank">DuckDuckCode</a>, an AI-powered web service that raises pull requests directly into your GitHub repositories.
+Users speak to our AI assistant to fix bugs or implement features, and it will (blazingly fast) write the code and create the pull request for them.
+
+It was a great experience.
+I had a ton of fun, learned a lot, met some awesome new people, and got to spend 24 hours with my closest friends.
+We also won the best beginner hack award!
+Since it was my, Anton's, and Lisa's first hackathon, we were eligible for the award.
+And for our first hackathon, in just 24 hours, I think we did an amazing job, and I'm extremely proud of all of my group members for their hard work.
+
+The GrizzHacks team is also incredible.
+I got to meet <a href="https://www.linkedin.com/in/halee-tisler" target="_blank">Halee Tisler</a> and <a href="https://www.linkedin.com/in/joemmalatesta" target="_blank">Joe Malatesta</a>, two very cool people who are BoiGia's good friends and the primary organizers of recent GrizzHacks.
+I also got to see <a href="https://www.linkedin.com/in/kaeden-bryer" target="_blank">Kaeden Bryer</a> who is part of the GrizzHacks team and is one of my favorite people even through we aren't that close haha.
+
+Honestly, I used to dislike the idea of hackathons, fearing bias and a lack of proper sanitization, but the whole GrizzHacks team has done an amazing job of making the event inclusive and welcoming to everyone.
+They also went above and beyond with the events, workshops, networking opportunities, food, and prizes.
+I'm really happy I went and this is another reminder to myself that what I think I know is the opposite of the truth most of the time 😅
+
+### Pictures
+
+Here are some pictures of us from the event, even though my team members are mogging me hard in each one 😔
+
+<img src="/images/grizzhacks7/walk.webp" alt="Us walking up after winning the best beginner hack award" />
+<img src="/images/grizzhacks7/wall.webp" alt="Us on the GrizzHacks photo wall after winning the best beginner hack award" />
+
+## Technical Details
+
+If you're looking for the juicy technical details, look no further.
+
+This project was quite ambitious and it's kind of a miracle we got it working in 24 hours.
+It's a full-stack application, meaning there's a frontend website and a backend REST API.
+But we also have most of our business logic in an AWS Lambda running asynchronously, and all of our data is stored in AWS DynamoDB.
+
+The high-level arthitecture looks like this:
+
+<img src="/images/grizzhacks7/duckduckcode-architecture.webp" alt="DuckDuckCode architecture diagram" />
+
+And our tech stack was:
+- Frontend:
+    - Next.js (React)
+    - TypeScript
+    - Tailwind CSS
+    - shadcn/ui
+    - AWS Amplify + Route 53 for hosting
+- Backend:
+    - Next.js API routes (Node.js)
+    - TypeScript
+    - AWS Lambda (Node.js)
+    - AWS DynamoDB
+    - Octokit
+    - GitHub API
+    - Google Gemini API
+
+### Frontend
+
+We had three pages:
+- Home
+- Login
+- Chat
+
+We prioritized a clean and simple design, but near the end we were able to spice it up with some really cute assets!
+I think it turned out looking quite nice and polished... except for the chat page (which is the one I did 😎)
+
+We used a few tools to facilitate quicker development and reaching consensus:
+- <a href="https://www.figma.com" target="_blank">Figma</a> for design mockups
+- <a href="https://www.canva.com/" target="_blank">Canva</a> for most of our logo and most of our assets
+- <a href="https://www.realtimecolors.com" target="_blank">Realtime Colors</a> for color scheme selection
+- <a href="https://v0.dev" target="_blank">v0.dev</a> for rapid AI-assisted mockups (with code you can actually import into your project)
+
+### Backend
+
+We created the following API routes to satisfy all of our use cases:
+- `GET /api/repos`: Gets all GitHub repositories for a user
+- `GET /api/github/callback`: GitHub OAuth callback - stores a user and access token in DynamoDB
+- `POST /api/repository`: Records a repository (project) item in DynamoDB
+- `GET /api/repository/:repo_name`: Gets a repository item from DynamoDB
+- `DELETE /api/repository/:repo_name`: Deletes a repository item from DynamoDB
+- `POST /api/repository/:repo_name/chat`: Adds a chat message to a repository item in DynamoDB. This is also what kicks of the Lambda execution
+
+We used Octokit, GitHub's Node.js API client, to interact with the GitHub API in a type-safe manner,
+They made it quite easy to use, and we were able to adapt to the SDK pretty quickly.
+
+The AWS SDK for Node.js is also quite nice, but PRO TIP: if a `@aws-sdk/lib-<service>` package is available, use it in combination with the `@aws-sdk/client-<service>` package.
+The `@aws-sdk/lib-dynamodb` package is WAY nicer to use because you don't have to convert your data to and from the DynamoDB format.
+
+Another tip: if you also deploy your app to AWS Amplify, you can easily create AWS clients without needing to configure credentials: AWS handles it for you already.
+Though, you DO still need to add the necessary IAM permissions to your Amplify app's role in the AWS console.
+
+#### Lambda
+
+The Lamdba is the real meat and potatoes of our project.
+
+We used a single lambda function that:
+1. Authenticates with GitHub using the user's access token through Octokit
+2. Downloads the user's repository as a tarball and extracts it to a temporary directory
+3. Reads all the files recursively
+4. Tells Gemini all the files in the project and asks which files it would like to inspect the contents of
+5. Prompts Gemini again with those file contents asks for code suggestions
+6. Replaces the local file contents with the suggested code
+7. Creates a pull request with the changes
+8. Records the pull request in that project's chats in DynamoDB
+
+You might be wondering: why didn't you just `git commit -a -m "..." && git push` in the Lambda?
+Lambda does not contain a Git binary D: and we felt it wasn't worth the time to install it in the Lambda or ship it with a layer.
+The GitHub API method is surprisingly quite a bit more difficult and is very inergonomic, but DeepSeek R1 did a great job of abstracting it away for the most part!
+
+#### DynamoDB
+
+It would've been way easier to just use a relational database like PostgreSQL, but we wanted to try something new.
+Also, it was kind of scary fighting the connection pool when using asynchronous invocation with Lambda 😟
+
+We designed this schema which is kind of goofy but it works!
+
+| pk | user_id | avatar_url | token | repo_id | name | branch | chats |
+|----|---------|------------|-------|---------|------|--------|-------|
+| USER#\<user_id\> | \<user_id\> | \<avatar_url\> | | | | | |
+| TOKEN#\<token\> | \<user_id\> | | \<token\> | | | | |
+| REPO#\<name\> | | | | \<repo_id\> | \<name\> | \<branch\> | \<chats\> |
+
+And after ~170 commits across 3 repos (website, lambda, and AWS CDK) as well as 0 hours of sleep, we accomplished our goal 😎
