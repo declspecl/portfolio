@@ -32,7 +32,7 @@ And for our first hackathon, in just 24 hours, I think we did an amazing job, an
 
 The GrizzHacks team is also incredible.
 I got to meet <a href="https://www.linkedin.com/in/halee-tisler" target="_blank">Halee Tisler</a> and <a href="https://www.linkedin.com/in/joemmalatesta" target="_blank">Joe Malatesta</a>, two very cool people who are BoiGia's good friends and the primary organizers of recent GrizzHacks.
-I also got to see <a href="https://www.linkedin.com/in/kaeden-bryer" target="_blank">Kaeden Bryer</a> who is part of the GrizzHacks team and is one of my favorite people even through we aren't that close haha.
+I also got to see <a href="https://www.linkedin.com/in/kaeden-bryer" target="_blank">Kaeden Bryer</a> who is part of the GrizzHacks team and is one of my favorite people even though we aren't that close haha.
 
 Honestly, I used to dislike the idea of hackathons, fearing bias and a lack of proper sanitization, but the whole GrizzHacks team has done an amazing job of making the event inclusive and welcoming to everyone.
 They also went above and beyond with the events, workshops, networking opportunities, food, and prizes.
@@ -133,10 +133,14 @@ Also, it was kind of scary fighting the connection pool when using asynchronous 
 
 We designed this schema which is kind of goofy but it works!
 
+<div style={{ overflowX: "scroll" }}>
+
 | pk | user_id | avatar_url | token | repo_id | name | branch | chats |
 |----|---------|------------|-------|---------|------|--------|-------|
 | USER#\<user_id\> | \<user_id\> | \<avatar_url\> | | | | | |
 | TOKEN#\<token\> | \<user_id\> | | \<token\> | | | | |
 | REPO#\<name\> | | | | \<repo_id\> | \<name\> | \<branch\> | \<chats\> |
+
+</div>
 
 And after ~170 commits across 3 repos (website, lambda, and AWS CDK) as well as 0 hours of sleep, we accomplished our goal 😎
