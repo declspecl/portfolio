@@ -4,169 +4,169 @@
 @plugin "tailwindcss-animate";
 
 @theme {
-	--color-background: hsl(var(--background));
-	--color-foreground: hsl(var(--foreground));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
 
-	--color-card: hsl(var(--card));
-	--color-card-foreground: hsl(var(--card-foreground));
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
 
-	--color-popover: hsl(var(--popover));
-	--color-popover-foreground: hsl(var(--popover-foreground));
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
 
-	--color-primary: hsl(var(--primary));
-	--color-primary-foreground: hsl(var(--primary-foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
 
-	--color-secondary: hsl(var(--secondary));
-	--color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-	--color-muted: hsl(var(--muted));
-	--color-muted-foreground: hsl(var(--muted-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
 
-	--color-accent: hsl(var(--accent));
-	--color-accent-foreground: hsl(var(--accent-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
 
-	--color-destructive: hsl(var(--destructive));
-	--color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
 
-	--color-border: hsl(var(--border));
-	--color-input: hsl(var(--input));
-	--color-ring: hsl(var(--ring));
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
 
-	--color-chart-1: hsl(var(--chart-1));
-	--color-chart-2: hsl(var(--chart-2));
-	--color-chart-3: hsl(var(--chart-3));
-	--color-chart-4: hsl(var(--chart-4));
-	--color-chart-5: hsl(var(--chart-5));
+    --color-chart-1: hsl(var(--chart-1));
+    --color-chart-2: hsl(var(--chart-2));
+    --color-chart-3: hsl(var(--chart-3));
+    --color-chart-4: hsl(var(--chart-4));
+    --color-chart-5: hsl(var(--chart-5));
 
-	--radius-lg: var(--radius);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-sm: calc(var(--radius) - 4px);
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
 
-	--font-family-clash-display: var(--font-clash-display);
-	--font-family-satoshi: var(--font-satoshi);
+    --font-family-clash-display: var(--font-clash-display);
+    --font-family-satoshi: var(--font-satoshi);
 
-	--breakpoint-xs: 440px;
+    --breakpoint-xs: 440px;
 }
 
 @utility text-balance {
-	text-wrap: balance;
+    text-wrap: balance;
 }
 
 @utility bg-gridlines {
-	background:
-		linear-gradient(to right, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size),
-		linear-gradient(to bottom, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size);
-	mask: linear-gradient(to bottom, white 0%, rgba(0, 0, 0, 0.3) 100vh);
+    background:
+        linear-gradient(to right, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size),
+        linear-gradient(to bottom, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size);
+    mask: linear-gradient(to bottom, white 0%, rgba(0, 0, 0, 0.3) 100vh);
 }
 
 @layer base {
-	* {
-		@apply border-border;
-	}
+    * {
+        @apply border-border;
+    }
 
-	body {
-		@apply bg-background text-foreground;
-	}
+    body {
+        @apply bg-background text-foreground;
+    }
 
-	* {
-		scroll-behavior: smooth;
-	}
+    * {
+        scroll-behavior: smooth;
+    }
 
-	:root {
-		--background: 200 14% 3%;
-		--foreground: 0 0% 98%;
+    :root {
+        --background: 200 14% 3%;
+        --foreground: 0 0% 98%;
 
-		--card: 200 14% 3%;
-		--card-foreground: 0 0% 98%;
+        --card: 200 14% 3%;
+        --card-foreground: 0 0% 98%;
 
-		--popover: 200 14% 3%;
-		--popover-foreground: 0 0% 98%;
+        --popover: 200 14% 3%;
+        --popover-foreground: 0 0% 98%;
 
-		--primary: 0 0% 98%;
-		--primary-foreground: 240 5.9% 10%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
 
-		--secondary: 240 3.7% 18.3%;
-		--secondary-foreground: 0 0% 98%;
+        --secondary: 240 3.7% 18.3%;
+        --secondary-foreground: 0 0% 98%;
 
-		--muted: 240 3.7% 18.3%;
-		--muted-foreground: 240 5% 70.9%;
+        --muted: 240 3.7% 18.3%;
+        --muted-foreground: 240 5% 70.9%;
 
-		--accent: 240 3.7% 18.3%;
-		--accent-foreground: 0 0% 98%;
+        --accent: 240 3.7% 18.3%;
+        --accent-foreground: 0 0% 98%;
 
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
 
-		--border: 240 3.7% 18.3%;
-		--input: 240 3.7% 15.9%;
-		--ring: 240 4.9% 83.9%;
+        --border: 240 3.7% 18.3%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
 
-		--chart-1: 220 70% 50%;
-		--chart-2: 160 60% 45%;
-		--chart-3: 30 80% 55%;
-		--chart-4: 280 65% 60%;
-		--chart-5: 340 75% 55%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
 
-		--radius: 0.5rem;
+        --radius: 0.5rem;
 
-		--color-prettylights-syntax-comment: #9198a1;
-		--color-prettylights-syntax-constant: #6cb6ff;
-		--color-prettylights-syntax-constant-other-reference-link: #96d0ff;
-		--color-prettylights-syntax-entity: #dcbdfb;
-		--color-prettylights-syntax-storage-modifier-import: #f0f6fc;
-		--color-prettylights-syntax-entity-tag: #8ddb8c;
-		--color-prettylights-syntax-keyword: #f47067;
-		--color-prettylights-syntax-string: #96d0ff;
-		--color-prettylights-syntax-variable: #f69d50;
-		--color-prettylights-syntax-brackethighlighter-unmatched: #e5534b;
-		--color-prettylights-syntax-brackethighlighter-angle: #9198a1;
-		--color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
-		--color-prettylights-syntax-invalid-illegal-bg: #922323;
-		--color-prettylights-syntax-carriage-return-text: #f0f6fc;
-		--color-prettylights-syntax-carriage-return-bg: #ad2e2c;
-		--color-prettylights-syntax-string-regexp: #8ddb8c;
-		--color-prettylights-syntax-markup-list: #eac55f;
-		--color-prettylights-syntax-markup-heading: #316dca;
-		--color-prettylights-syntax-markup-italic: #f0f6fc;
-		--color-prettylights-syntax-markup-bold: #f0f6fc;
-		--color-prettylights-syntax-markup-deleted-text: #ffd8d3;
-		--color-prettylights-syntax-markup-deleted-bg: #78191b;
-		--color-prettylights-syntax-markup-inserted-text: #b4f1b4;
-		--color-prettylights-syntax-markup-inserted-bg: #1b4721;
-		--color-prettylights-syntax-markup-changed-text: #ffddb0;
-		--color-prettylights-syntax-markup-changed-bg: #682d0f;
-		--color-prettylights-syntax-markup-ignored-text: #f0f6fc;
-		--color-prettylights-syntax-markup-ignored-bg: #255ab2;
-		--color-prettylights-syntax-meta-diff-range: #dcbdfb;
-		--color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
-	}
+        --color-prettylights-syntax-comment: #9198a1;
+        --color-prettylights-syntax-constant: #6cb6ff;
+        --color-prettylights-syntax-constant-other-reference-link: #96d0ff;
+        --color-prettylights-syntax-entity: #dcbdfb;
+        --color-prettylights-syntax-storage-modifier-import: #f0f6fc;
+        --color-prettylights-syntax-entity-tag: #8ddb8c;
+        --color-prettylights-syntax-keyword: #f47067;
+        --color-prettylights-syntax-string: #96d0ff;
+        --color-prettylights-syntax-variable: #f69d50;
+        --color-prettylights-syntax-brackethighlighter-unmatched: #e5534b;
+        --color-prettylights-syntax-brackethighlighter-angle: #9198a1;
+        --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+        --color-prettylights-syntax-invalid-illegal-bg: #922323;
+        --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+        --color-prettylights-syntax-carriage-return-bg: #ad2e2c;
+        --color-prettylights-syntax-string-regexp: #8ddb8c;
+        --color-prettylights-syntax-markup-list: #eac55f;
+        --color-prettylights-syntax-markup-heading: #316dca;
+        --color-prettylights-syntax-markup-italic: #f0f6fc;
+        --color-prettylights-syntax-markup-bold: #f0f6fc;
+        --color-prettylights-syntax-markup-deleted-text: #ffd8d3;
+        --color-prettylights-syntax-markup-deleted-bg: #78191b;
+        --color-prettylights-syntax-markup-inserted-text: #b4f1b4;
+        --color-prettylights-syntax-markup-inserted-bg: #1b4721;
+        --color-prettylights-syntax-markup-changed-text: #ffddb0;
+        --color-prettylights-syntax-markup-changed-bg: #682d0f;
+        --color-prettylights-syntax-markup-ignored-text: #f0f6fc;
+        --color-prettylights-syntax-markup-ignored-bg: #255ab2;
+        --color-prettylights-syntax-meta-diff-range: #dcbdfb;
+        --color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
+    }
 }
 
 .pl-c {
-	color: var(--color-prettylights-syntax-comment);
+    color: var(--color-prettylights-syntax-comment);
 }
 
 .pl-c1,
 .pl-s .pl-v {
-	color: var(--color-prettylights-syntax-constant);
+    color: var(--color-prettylights-syntax-constant);
 }
 
 .pl-e,
 .pl-en {
-	color: var(--color-prettylights-syntax-entity);
+    color: var(--color-prettylights-syntax-entity);
 }
 
 .pl-smi,
 .pl-s .pl-s1 {
-	color: var(--color-prettylights-syntax-storage-modifier-import);
+    color: var(--color-prettylights-syntax-storage-modifier-import);
 }
 
 .pl-ent {
-	color: var(--color-prettylights-syntax-entity-tag);
+    color: var(--color-prettylights-syntax-entity-tag);
 }
 
 .pl-k {
-	color: var(--color-prettylights-syntax-keyword);
+    color: var(--color-prettylights-syntax-keyword);
 }
 
 .pl-s,
@@ -176,88 +176,88 @@
 .pl-sr .pl-cce,
 .pl-sr .pl-sre,
 .pl-sr .pl-sra {
-	color: var(--color-prettylights-syntax-string);
+    color: var(--color-prettylights-syntax-string);
 }
 
 .pl-v,
 .pl-smw {
-	color: var(--color-prettylights-syntax-variable);
+    color: var(--color-prettylights-syntax-variable);
 }
 
 .pl-bu {
-	color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
+    color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
 }
 
 .pl-ii {
-	color: var(--color-prettylights-syntax-invalid-illegal-text);
-	background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
+    color: var(--color-prettylights-syntax-invalid-illegal-text);
+    background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
 }
 
 .pl-c2 {
-	color: var(--color-prettylights-syntax-carriage-return-text);
-	background-color: var(--color-prettylights-syntax-carriage-return-bg);
+    color: var(--color-prettylights-syntax-carriage-return-text);
+    background-color: var(--color-prettylights-syntax-carriage-return-bg);
 }
 
 .pl-sr .pl-cce {
-	font-weight: bold;
-	color: var(--color-prettylights-syntax-string-regexp);
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-string-regexp);
 }
 
 .pl-ml {
-	color: var(--color-prettylights-syntax-markup-list);
+    color: var(--color-prettylights-syntax-markup-list);
 }
 
 .pl-mh,
 .pl-mh .pl-en,
 .pl-ms {
-	font-weight: bold;
-	color: var(--color-prettylights-syntax-markup-heading);
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-markup-heading);
 }
 
 .pl-mi {
-	font-style: italic;
-	color: var(--color-prettylights-syntax-markup-italic);
+    font-style: italic;
+    color: var(--color-prettylights-syntax-markup-italic);
 }
 
 .pl-mb {
-	font-weight: bold;
-	color: var(--color-prettylights-syntax-markup-bold);
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-markup-bold);
 }
 
 .pl-md {
-	color: var(--color-prettylights-syntax-markup-deleted-text);
-	background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+    color: var(--color-prettylights-syntax-markup-deleted-text);
+    background-color: var(--color-prettylights-syntax-markup-deleted-bg);
 }
 
 .pl-mi1 {
-	color: var(--color-prettylights-syntax-markup-inserted-text);
-	background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+    color: var(--color-prettylights-syntax-markup-inserted-text);
+    background-color: var(--color-prettylights-syntax-markup-inserted-bg);
 }
 
 .pl-mc {
-	color: var(--color-prettylights-syntax-markup-changed-text);
-	background-color: var(--color-prettylights-syntax-markup-changed-bg);
+    color: var(--color-prettylights-syntax-markup-changed-text);
+    background-color: var(--color-prettylights-syntax-markup-changed-bg);
 }
 
 .pl-mi2 {
-	color: var(--color-prettylights-syntax-markup-ignored-text);
-	background-color: var(--color-prettylights-syntax-markup-ignored-bg);
+    color: var(--color-prettylights-syntax-markup-ignored-text);
+    background-color: var(--color-prettylights-syntax-markup-ignored-bg);
 }
 
 .pl-mdr {
-	font-weight: bold;
-	color: var(--color-prettylights-syntax-meta-diff-range);
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-meta-diff-range);
 }
 
 .pl-ba {
-	color: var(--color-prettylights-syntax-brackethighlighter-angle);
+    color: var(--color-prettylights-syntax-brackethighlighter-angle);
 }
 
 .pl-sg {
-	color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
+    color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
 }
 
 .pl-corl {
-	text-decoration: underline;
-	color: var(--color-prettylights-syntax-constant-other-reference-link);
+    text-decoration: underline;
+    color: var(--color-prettylights-syntax-constant-other-reference-link);
 }

@@ -1,19 +1,19 @@
-import { HeroSection } from "@/views/Hero";
-import { TimelineView } from "@/views/Timeline";
-import { ProjectsView } from "@/views/Projects";
+import { HeroSection } from "@/views/hero";
+import { ProjectsView } from "@/views/projects";
+import { TimelineView } from "@/views/timeline";
 
 export default function Home() {
-	return (
-		<>
-			<HeroSection />
+    return (
+        <>
+            <HeroSection />
 
-			<div className="my-24" />
+            <div className="my-24" />
 
-			<TimelineView />
+            <TimelineView />
 
-			<div className="my-24" />
+            <div className="my-24" />
 
-			<ProjectsView />
-		</>
-	);
+            <ProjectsView />
+        </>
+    );
 }

@@ -4,10 +4,18 @@ Written 3/24/2025
 
 ## Links
 
-- <a href="https://duckduckcode.tech" target="_blank">Website</a>
-- <a href="https://devpost.com/software/duckduckcode" target="_blank">Devpost</a>
-- <a href="https://github.com/orgs/DuckDuckCode-tech/repositories" target="_blank">GitHub</a>
-- <a href="https://youtu.be/q8YWrZACpDw?si=uwAoR-PhA-M1mtsx" target="_blank">Demo video</a>
+- <a href="https://duckduckcode.tech" target="_blank">
+      Website
+  </a>
+- <a href="https://devpost.com/software/duckduckcode" target="_blank">
+      Devpost
+  </a>
+- <a href="https://github.com/orgs/DuckDuckCode-tech/repositories" target="_blank">
+      GitHub
+  </a>
+- <a href="https://youtu.be/q8YWrZACpDw?si=uwAoR-PhA-M1mtsx" target="_blank">
+      Demo video
+  </a>
 
 ## Context
 
@@ -16,6 +24,7 @@ It's is a 24-hour coding competition where students come together to create proj
 This was my first hackathon, and I was thrilled to be participating with some of my favorite people.
 
 My team consisted of:
+
 - Myself (Gavin D'Hondt), <a href="https://www.linkedin.com/in/gavindhondt" target="_blank">LinkedIn</a>
 - BoiGia Phui (my lovely ~~wife~~ girlfriend), <a href="https://www.linkedin.com/in/boigia-phui" target="_blank">LinkedIn</a>
 - Anton Sakhanovych (my handsome ~~husband~~ ~~boyfriend~~ friend), <a href="https://www.linkedin.com/in/antonsakhanovych" target="_blank">LinkedIn</a>
@@ -58,6 +67,7 @@ The high-level architecture looks like this:
 <img src="/images/grizzhacks7/duckduckcode-architecture.webp" alt="DuckDuckCode architecture diagram" />
 
 And our tech stack was:
+
 - Frontend:
     - Next.js (React)
     - TypeScript
@@ -76,6 +86,7 @@ And our tech stack was:
 ### Frontend
 
 We had three pages:
+
 - Home
 - Login
 - Chat
@@ -84,14 +95,28 @@ We prioritized a clean and simple design, but near the end we were able to spice
 I think it turned out looking quite nice and polished... except for the chat page (which is the one I did 😎)
 
 We used a few tools to facilitate quicker development and reaching consensus:
-- <a href="https://www.figma.com" target="_blank">Figma</a> for design mockups
-- <a href="https://www.canva.com/" target="_blank">Canva</a> for most of our logo and most of our assets
-- <a href="https://www.realtimecolors.com" target="_blank">Realtime Colors</a> for color scheme selection
-- <a href="https://v0.dev" target="_blank">v0.dev</a> for rapid AI-assisted mockups (with code you can actually import into your project)
+
+- <a href="https://www.figma.com" target="_blank">
+      Figma
+  </a>
+  for design mockups
+- <a href="https://www.canva.com/" target="_blank">
+      Canva
+  </a>
+  for most of our logo and most of our assets
+- <a href="https://www.realtimecolors.com" target="_blank">
+      Realtime Colors
+  </a>
+  for color scheme selection
+- <a href="https://v0.dev" target="_blank">
+      v0.dev
+  </a>
+  for rapid AI-assisted mockups (with code you can actually import into your project)
 
 ### Backend
 
 We created the following API routes to satisfy all of our use cases:
+
 - `GET /api/repos`: Gets all GitHub repositories for a user
 - `GET /api/github/callback`: GitHub OAuth callback - stores a user and access token in DynamoDB
 - `POST /api/repository`: Records a repository (project) item in DynamoDB
@@ -113,6 +138,7 @@ Though, you DO still need to add the necessary IAM permissions to your Amplify a
 The Lamdba is the real meat and potatoes of our project.
 
 We used a single lambda function that:
+
 1. Authenticates with GitHub using the user's access token through Octokit
 2. Downloads the user's repository as a tarball and extracts it to a temporary directory
 3. Reads all the files recursively
@@ -135,11 +161,11 @@ We designed this schema which is kind of goofy but it works!
 
 <div style={{ overflowX: "scroll" }}>
 
-| pk | user_id | avatar_url | token | repo_id | name | branch | chats |
-|----|---------|------------|-------|---------|------|--------|-------|
-| USER#\<user_id\> | \<user_id\> | \<avatar_url\> | | | | | |
-| TOKEN#\<token\> | \<user_id\> | | \<token\> | | | | |
-| REPO#\<name\> | | | | \<repo_id\> | \<name\> | \<branch\> | \<chats\> |
+| pk               | user_id     | avatar_url     | token     | repo_id     | name     | branch     | chats     |
+| ---------------- | ----------- | -------------- | --------- | ----------- | -------- | ---------- | --------- |
+| USER#\<user_id\> | \<user_id\> | \<avatar_url\> |           |             |          |            |           |
+| TOKEN#\<token\>  | \<user_id\> |                | \<token\> |             |          |            |           |
+| REPO#\<name\>    |             |                |           | \<repo_id\> | \<name\> | \<branch\> | \<chats\> |
 
 </div>
 

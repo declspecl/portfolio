@@ -1,4 +1,4 @@
 {
     "*.{json,mjs,cjs,ts,tsx,css}": ["pnpm exec prettier --cache --cache-location .cache/prettier --write"],
-    "*.{mjs,cjs,ts,tsx}": ["pnpm exec eslint --cache --cache-location .cache/eslint --fix"]
+    "*.{mjs,cjs,ts,tsx}": ["pnpm exec eslint --cache --cache-location .cache/he/eslint --fix"]
 }

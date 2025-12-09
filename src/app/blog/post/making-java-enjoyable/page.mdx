@@ -218,14 +218,20 @@ I feel like the language just leaves you susceptible to a lot of codesmells and 
 
 Here's a list of packages I use in basically every project:
 
-- <a href="https://projectlombok.org/" target="_blank">Lombok</a>:
+- <a href="https://projectlombok.org/" target="_blank">
+      Lombok
+  </a>
+  :
 
     A ubiquitous must-have for Java development.
     It adds a ton of useful annotations that remove a lot of boilerplate from your code, like `@EqualsAndHashCode`, `@ToString`, and `@Builder`.
     Be sure to also install the <a href="https://projectlombok.org/setup/intellij" target="_blank">Lombok plugin</a> if using IntelliJ IDEA for full support.
     Some people dislike Annotation-Driven Development, the Java special, but these annotations aren't even magic; they just write the code that you would have anyways.
 
-- <a href="https://immutables.github.io/" target="_blank">Immutables</a>:
+- <a href="https://immutables.github.io/" target="_blank">
+      Immutables
+  </a>
+  :
 
     Immutables is my absolute go-to for domain modeling.
     It forces immutability on your objects, which reduces the chance of bugs, and provides some great QoL features.
@@ -255,23 +261,27 @@ Here's a list of packages I use in basically every project:
     System.out.println(user.isCool());
     ```
 
-- <a href="https://github.com/google/guava" target="_blank">Google Guava</a>:
+- <a href="https://github.com/google/guava" target="_blank">
+      Google Guava
+  </a>
+  :
 
     Guava is a great utility library that fills the gaps of what Java's standard library is missing.
     It has a great set of caching helpers, like `CacheBuilder` and `LoadingCache`.
     It also has some nice utility functions:
-
     - `Preconditions.checkArgument`
     - `ImmutableList.of`
     - `ImmutableMap.of`
     - `Hashing.sha256`
     - `Hashing.hmacSha256`
 
-- <a href="https://commons.apache.org/proper/commons-lang/" target="_blank">Apache Commons Lang</a>:
+- <a href="https://commons.apache.org/proper/commons-lang/" target="_blank">
+      Apache Commons Lang
+  </a>
+  :
 
     Another small library of utility methods.
     Some useful functions from here are:
-
     - `StringUtils.isEmpty`
     - `StringUtils.isBlank`
     - `CollectionUtils.isEmpty`
