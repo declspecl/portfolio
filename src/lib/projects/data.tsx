@@ -11,7 +11,6 @@ export const projects: Project[] = [
             Technology.NextJS,
             Technology.TailwindCSS,
             Technology.PostgreSQL,
-            Technology.Rust,
             Technology.Vercel,
             Technology.Figma,
             Technology.TRPC,
@@ -113,6 +112,7 @@ export const projects: Project[] = [
             Technology.TRPC,
             Technology.Turborepo,
             Technology.GenAI,
+            Technology.Vite,
         ],
         links: {
             live: "https://www.fouseion.com",
@@ -308,6 +308,7 @@ export const projects: Project[] = [
             Technology.SQLite,
             Technology.GCP,
             Technology.Figma,
+            Technology.Vite,
         ],
         links: {
             github: "https://github.com/declspecl/bookmarket",
