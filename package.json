@@ -52,6 +52,8 @@
         "postcss": "^8.5.6",
         "prettier": "^3.7.4",
         "prettier-plugin-tailwindcss": "^0.7.2",
+        "react-grab": "^0.0.76",
+        "react-scan": "^0.4.3",
         "schema-dts": "^1.1.5",
         "tailwindcss": "^4.1.17",
         "typescript": "^5.9.3",

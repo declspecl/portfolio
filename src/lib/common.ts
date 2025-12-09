@@ -16,4 +16,8 @@ export enum Technology {
     AWS = "AWS",
     GCP = "GCP",
     Nginx = "Nginx",
+    Tauri = "Tauri",
+    TRPC = "tRPC",
+    Turborepo = "Turborepo",
+    GenAI = "GenAI",
 }

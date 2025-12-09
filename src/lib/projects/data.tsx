@@ -14,63 +14,84 @@ export const projects: Project[] = [
             Technology.Rust,
             Technology.Vercel,
             Technology.Figma,
+            Technology.TRPC,
+            Technology.Turborepo,
+            Technology.GenAI,
         ],
         links: {
             live: "https://www.unifit.me",
         },
         screenshots: [
             {
-                name: "UniFit home page",
+                name: "UniFit hero page",
                 mobile: {
-                    src: "/images/unifit/home-460w.webp",
+                    src: "/images/unifit/hero-460w.webp",
                     width: 460,
-                    height: 367,
+                    height: 368,
                 },
                 desktop: {
-                    src: "/images/unifit/home-350w.webp",
+                    src: "/images/unifit/hero-350w.webp",
                     width: 350,
-                    height: 279,
+                    height: 280,
                 },
                 magnified: {
-                    src: "/images/unifit/home-740w.webp",
+                    src: "/images/unifit/hero-740w.webp",
                     width: 740,
-                    height: 590,
+                    height: 592,
                 },
             },
             {
-                name: "UniFit account and meal plans page",
+                name: "UniFit meal plan demo",
                 mobile: {
-                    src: "/images/unifit/account-460w.webp",
+                    src: "/images/unifit/demo-460w.webp",
                     width: 460,
-                    height: 367,
+                    height: 368,
                 },
                 desktop: {
-                    src: "/images/unifit/account-350w.webp",
+                    src: "/images/unifit/demo-350w.webp",
                     width: 350,
-                    height: 279,
+                    height: 280,
                 },
                 magnified: {
-                    src: "/images/unifit/account-740w.webp",
+                    src: "/images/unifit/demo-740w.webp",
                     width: 740,
-                    height: 590,
+                    height: 592,
                 },
             },
             {
-                name: "UniFit meal plan preferences builder page",
+                name: "UniFit features overview",
                 mobile: {
-                    src: "/images/unifit/builder-460w.webp",
+                    src: "/images/unifit/features-460w.webp",
                     width: 460,
-                    height: 367,
+                    height: 368,
                 },
                 desktop: {
-                    src: "/images/unifit/builder-350w.webp",
+                    src: "/images/unifit/features-350w.webp",
                     width: 350,
-                    height: 279,
+                    height: 280,
                 },
                 magnified: {
-                    src: "/images/unifit/builder-740w.webp",
+                    src: "/images/unifit/features-740w.webp",
                     width: 740,
-                    height: 590,
+                    height: 592,
+                },
+            },
+            {
+                name: "UniFit FAQ and waitlist",
+                mobile: {
+                    src: "/images/unifit/faq-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/unifit/faq-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/unifit/faq-740w.webp",
+                    width: 740,
+                    height: 592,
                 },
             },
         ],
@@ -78,6 +99,103 @@ export const projects: Project[] = [
         bullets: [
             "Engineered an optimal meal plan generation algorithm using dynamic programming, reducing computation time and memory footprint both by over 90% compared to brute force approaches",
             "Architected a REST API to efficiently query ~800k meal plans considering various user preferences",
+        ],
+    },
+    {
+        name: "Fouseion",
+        summary: "Local-first AI-native tag based file management desktop app",
+        technologies: [
+            Technology.React,
+            Technology.TypeScript,
+            Technology.Rust,
+            Technology.TailwindCSS,
+            Technology.Tauri,
+            Technology.TRPC,
+            Technology.Turborepo,
+            Technology.GenAI,
+        ],
+        links: {
+            live: "https://www.fouseion.com",
+        },
+        screenshots: [
+            {
+                name: "Fouseion hero page",
+                mobile: {
+                    src: "/images/fouseion/hero-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/fouseion/hero-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/fouseion/hero-740w.webp",
+                    width: 740,
+                    height: 592,
+                },
+            },
+            {
+                name: "Fouseion features overview",
+                mobile: {
+                    src: "/images/fouseion/features-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/fouseion/features-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/fouseion/features-740w.webp",
+                    width: 740,
+                    height: 592,
+                },
+            },
+            {
+                name: "Fouseion workbench demo",
+                mobile: {
+                    src: "/images/fouseion/workbench-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/fouseion/workbench-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/fouseion/workbench-740w.webp",
+                    width: 740,
+                    height: 592,
+                },
+            },
+            {
+                name: "Fouseion waitlist and footer",
+                mobile: {
+                    src: "/images/fouseion/waitlist-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/fouseion/waitlist-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/fouseion/waitlist-740w.webp",
+                    width: 740,
+                    height: 592,
+                },
+            },
+        ],
+        type: "bullets",
+        bullets: [
+            "Designed and built a local-first desktop application using Tauri with semantic file search and automatic tagging",
+            "Implemented AI-native workflows for intelligent file organization without cloud uploads or privacy compromises",
+            "Utilized AI to generate tags for files based on their content, allowing for more accurate and efficient file organization",
         ],
     },
     {

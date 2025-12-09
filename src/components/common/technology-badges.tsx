@@ -2,6 +2,7 @@ import { Technology } from "@/lib/common";
 import { cn } from "@/lib/utils";
 import { FaReact } from "react-icons/fa";
 import { FaAws, FaFigma, FaJava, FaPython, FaRust } from "react-icons/fa6";
+import { HiSparkles } from "react-icons/hi2";
 import {
     SiCplusplus,
     SiGooglecloud,
@@ -11,6 +12,9 @@ import {
     SiSpringboot,
     SiSqlite,
     SiTailwindcss,
+    SiTauri,
+    SiTrpc,
+    SiTurborepo,
     SiTypescript,
     SiVercel,
     SiVite,
@@ -104,6 +108,22 @@ export function NginxBadge() {
     return <StaticBadge name={Technology.Nginx} icon={<SiNginx />} className="bg-[#0c5a29]" />;
 }
 
+export function TauriBadge() {
+    return <StaticBadge name={Technology.Tauri} icon={<SiTauri />} className="bg-[#5c4500]" />;
+}
+
+export function TRPCBadge() {
+    return <StaticBadge name={Technology.TRPC} icon={<SiTrpc />} className="bg-[#104d61]" />;
+}
+
+export function TurboreporBadge() {
+    return <StaticBadge name={Technology.Turborepo} icon={<SiTurborepo />} className="bg-[#5c1a1a]" />;
+}
+
+export function GenAIBadge() {
+    return <StaticBadge name={Technology.GenAI} icon={<HiSparkles />} className="bg-[#4a1a5c]" />;
+}
+
 interface TechnologyBadgeProps {
     technology: Technology;
 }
@@ -160,6 +180,18 @@ export function TechnologyBadge({ technology }: TechnologyBadgeProps) {
         }
         case Technology.Nginx: {
             return <NginxBadge />;
+        }
+        case Technology.Tauri: {
+            return <TauriBadge />;
+        }
+        case Technology.TRPC: {
+            return <TRPCBadge />;
+        }
+        case Technology.Turborepo: {
+            return <TurboreporBadge />;
+        }
+        case Technology.GenAI: {
+            return <GenAIBadge />;
         }
     }
 }
