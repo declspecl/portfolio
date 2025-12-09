@@ -6,7 +6,7 @@ import { IconContext } from "react-icons";
 import { Button } from "@/components/ui/Button";
 import { LuGithub, LuGlobe } from "react-icons/lu";
 import ClassNames from "embla-carousel-class-names";
-import { Project, ProjectScreenshot } from "@/lib/projects/model";
+import type { Project, ProjectScreenshot } from "@/lib/projects/model";
 import { TechnologyBadge } from "@/components/common/TechnologyBadges";
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/Dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
@@ -30,8 +30,8 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 				})}
 			>
 				<div className="md:grow md:basis-0">
-					<span className="mb-2 inline-flex flex-col gap-2 xs:mb-0 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4">
-						<h2 className="font-clash-display text-3xl font-semibold xs:text-4xl">{name}</h2>
+					<span className="xs:mb-0 xs:flex-row xs:flex-wrap xs:items-center xs:gap-4 mb-2 inline-flex flex-col gap-2">
+						<h2 className="font-clash-display xs:text-4xl text-3xl font-semibold">{name}</h2>
 
 						<span className="inline-flex flex-row items-center gap-2">
 							<IconContext.Provider value={{ size: "1.25rem" }}>
@@ -52,7 +52,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 							</IconContext.Provider>
 						</span>
 					</span>
-					<p className="mb-2 text-base text-muted-foreground">{summary}</p>
+					<p className="text-muted-foreground mb-2 text-base">{summary}</p>
 
 					{rest.type === "bullets" ? (
 						<ul className="list-inside list-disc">
@@ -79,7 +79,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 					opts={{ loop: true }}
 					plugins={[
 						ClassNames({
-							snapped: "!opacity-100"
+							snapped: "opacity-100!"
 						})
 					]}
 				>
@@ -120,7 +120,7 @@ export function ProjectShowcase({ project, direction = "row-reverse" }: ProjectS
 				{magnifiedScreenshot && (
 					<>
 						<DialogHeader>
-							<DialogTitle className="font-clash-display text-2xl font-semibold xs:text-3xl">{magnifiedScreenshot.name}</DialogTitle>
+							<DialogTitle className="font-clash-display xs:text-3xl text-2xl font-semibold">{magnifiedScreenshot.name}</DialogTitle>
 						</DialogHeader>
 
 						<img

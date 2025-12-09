@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Technology } from "@/lib/common";
 import { ToPresentDateRange } from "./ToPresentDateRange";
-import { TimelineEntryInformation } from "@/lib/timeline/model";
+import type { TimelineEntryInformation } from "@/lib/timeline/model";
 import { StaticBadge, TechnologyBadge } from "@/components/common/TechnologyBadges";
 import { formatDateRangeDifference, formatTimelineEntryDate } from "@/lib/timeline/server";
 
@@ -27,13 +27,13 @@ export function TimelineEntry({ className, entry }: TimelineEntryProps) {
 						<ToPresentDateRange start={dateRange[0]} />
 					)}
 				</p>
-				<p className="text-lg text-muted-foreground">{location}</p>
+				<p className="text-muted-foreground text-lg">{location}</p>
 			</div>
 
 			{/* RHS: Header, Subheader, and Bullets/Content */}
 			<div className="sm:grow sm:basis-0">
-				<h2 className="font-clash-display text-3xl font-medium xs:text-4xl">{header}</h2>
-				<h3 className="mb-2 text-xl text-muted-foreground xs:text-2xl">{subheader}</h3>
+				<h2 className="font-clash-display xs:text-4xl text-3xl font-medium">{header}</h2>
+				<h3 className="text-muted-foreground xs:text-2xl mb-2 text-xl">{subheader}</h3>
 
 				{rest.type === "content" ? (
 					<>{rest.content}</>

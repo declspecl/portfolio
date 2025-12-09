@@ -1,4 +1,5 @@
-import { BlogPostMetadata, BlogPostTag } from "./model";
+import { BlogPostTag } from "./model";
+import type { BlogPostMetadata } from "./model";
 
 export const blogPosts: BlogPostMetadata[] = [
 	{

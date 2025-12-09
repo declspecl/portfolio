@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 const buttonVariants = cva(
 	clsx(
 		"relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors",
-		"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+		"focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
 		"disabled:pointer-events-none",
 		"[&_svg]:pointer-events-none [&_svg]:shrink-0"
 	),
@@ -43,7 +43,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ classN
 	const Comp = asChild ? Slot : "button";
 
 	return (
-		<div className="relative inline-flex before:absolute before:left-0 before:top-0 before:h-[calc(100%+0.15rem)] before:w-[calc(100%+0.15rem)] before:rounded-md before:bg-primary before:content-['']">
+		<div className="before:bg-primary relative inline-flex before:absolute before:top-0 before:left-0 before:h-[calc(100%+0.15rem)] before:w-[calc(100%+0.15rem)] before:rounded-md before:content-['']">
 			<Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
 		</div>
 	);

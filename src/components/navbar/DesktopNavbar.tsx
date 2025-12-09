@@ -9,7 +9,7 @@ export function DesktopNavbar({ className }: DesktopNavbarProps) {
 	return (
 		<nav
 			className={cn(
-				"sticky top-4 z-10 mx-auto flex w-fit items-center justify-center gap-8 rounded-full border bg-background/80 px-8 py-3.5 backdrop-blur-sm",
+				"bg-background/80 sticky top-4 z-10 mx-auto flex w-fit items-center justify-center gap-8 rounded-full border px-8 py-3.5 backdrop-blur-xs",
 				className
 			)}
 		>
@@ -50,7 +50,7 @@ function NavbarLink({ href, openInNewTab = false, useClientSideRouting, children
 			href={href}
 			target={openInNewTab ? "_blank" : "_self"}
 			className={
-				"relative before:absolute before:bottom-0 before:left-1/2 before:h-[1px] before:w-0 before:-translate-x-1/2 before:bg-primary before:transition-[width] before:duration-200 before:content-[''] hover:before:w-full"
+				"before:bg-primary relative before:absolute before:bottom-0 before:left-1/2 before:h-px before:w-0 before:-translate-x-1/2 before:transition-[width] before:duration-200 before:content-[''] hover:before:w-full"
 			}
 		>
 			{children}

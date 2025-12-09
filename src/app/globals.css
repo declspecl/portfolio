@@ -1,21 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
 
-	.bg-gridlines {
-		background:
-			linear-gradient(to right, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size),
-			linear-gradient(to bottom, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size);
-		mask: linear-gradient(to bottom, white 0%, rgba(0, 0, 0, 0.3) 100vh);
-	}
+@theme {
+	--color-background: hsl(var(--background));
+	--color-foreground: hsl(var(--foreground));
+
+	--color-card: hsl(var(--card));
+	--color-card-foreground: hsl(var(--card-foreground));
+
+	--color-popover: hsl(var(--popover));
+	--color-popover-foreground: hsl(var(--popover-foreground));
+
+	--color-primary: hsl(var(--primary));
+	--color-primary-foreground: hsl(var(--primary-foreground));
+
+	--color-secondary: hsl(var(--secondary));
+	--color-secondary-foreground: hsl(var(--secondary-foreground));
+
+	--color-muted: hsl(var(--muted));
+	--color-muted-foreground: hsl(var(--muted-foreground));
+
+	--color-accent: hsl(var(--accent));
+	--color-accent-foreground: hsl(var(--accent-foreground));
+
+	--color-destructive: hsl(var(--destructive));
+	--color-destructive-foreground: hsl(var(--destructive-foreground));
+
+	--color-border: hsl(var(--border));
+	--color-input: hsl(var(--input));
+	--color-ring: hsl(var(--ring));
+
+	--color-chart-1: hsl(var(--chart-1));
+	--color-chart-2: hsl(var(--chart-2));
+	--color-chart-3: hsl(var(--chart-3));
+	--color-chart-4: hsl(var(--chart-4));
+	--color-chart-5: hsl(var(--chart-5));
+
+	--radius-lg: var(--radius);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-sm: calc(var(--radius) - 4px);
+
+	--font-family-clash-display: var(--font-clash-display);
+	--font-family-satoshi: var(--font-satoshi);
+
+	--breakpoint-xs: 440px;
+}
+
+@utility text-balance {
+	text-wrap: balance;
+}
+
+@utility bg-gridlines {
+	background:
+		linear-gradient(to right, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size),
+		linear-gradient(to bottom, hsl(var(--line-color)) 1px, transparent 1px) 0 0 / var(--line-size) var(--line-size);
+	mask: linear-gradient(to bottom, white 0%, rgba(0, 0, 0, 0.3) 100vh);
 }
 
 @layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+
 	* {
 		scroll-behavior: smooth;
 	}
@@ -87,16 +139,6 @@
 		--color-prettylights-syntax-markup-ignored-bg: #255ab2;
 		--color-prettylights-syntax-meta-diff-range: #dcbdfb;
 		--color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
-	}
-}
-
-@layer base {
-	* {
-		@apply border-border;
-	}
-
-	body {
-		@apply bg-background text-foreground;
 	}
 }
 

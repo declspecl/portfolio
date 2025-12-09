@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MonthNumber, TimelineEntryDate } from "@/lib/timeline/model";
+import type { MonthNumber, TimelineEntryDate } from "@/lib/timeline/model";
 import { formatDateRangeDifference, formatTimelineEntryDate } from "@/lib/timeline/server";
 
 interface ToPresentDateRange {

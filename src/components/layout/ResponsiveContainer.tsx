@@ -6,5 +6,5 @@ interface ResponsiveContainerProps {
 }
 
 export function ResponsiveContainer({ children, className }: ResponsiveContainerProps) {
-	return <div className={cn("mx-auto max-w-[64rem]", className)}>{children}</div>;
+	return <div className={cn("mx-auto max-w-5xl", className)}>{children}</div>;
 }

@@ -1,5 +1,5 @@
 import { Technology } from "@/lib/common";
-import { TimelineEntryInformation } from "./model";
+import type { TimelineEntryInformation } from "./model";
 
 export const experienceEntries: TimelineEntryInformation[] = [
 	{

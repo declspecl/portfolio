@@ -15,9 +15,9 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 		<div className={cn("sticky top-4 z-10", className)}>
 			<button
 				className={cn(
-					"mx-auto flex w-full flex-col items-center justify-center border border-primary/40 bg-background py-3.5 text-lg font-medium backdrop-blur-sm transition-[border-color] hover:border-primary",
+					"border-primary/40 bg-background hover:border-primary mx-auto flex w-full flex-col items-center justify-center border py-3.5 text-lg font-medium backdrop-blur-xs transition-[border-color]",
 					{ "rounded-2xl": !isOpen },
-					{ "rounded-2xl rounded-b-none border-b-primary/40": isOpen }
+					{ "border-b-primary/40 rounded-2xl rounded-b-none": isOpen }
 				)}
 				onClick={() => setIsOpen(!isOpen)}
 			>
@@ -26,7 +26,7 @@ export function MobileNavbar({ className }: MobileNavbarProps) {
 
 			<nav
 				className={cn(
-					"absolute flex w-full flex-col items-center gap-2 rounded-b-2xl border border-t-0 border-primary/40 bg-background py-4 backdrop-blur-sm",
+					"border-primary/40 bg-background absolute flex w-full flex-col items-center gap-2 rounded-b-2xl border border-t-0 py-4 backdrop-blur-xs",
 					{ hidden: !isOpen }
 				)}
 			>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LuCalendar } from "react-icons/lu";
 import { Button } from "@/components/ui/Button";
-import { BlogPostMetadata } from "@/lib/blog/model";
+import type { BlogPostMetadata } from "@/lib/blog/model";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
 import { BlogPostBadge } from "./BlogPostBadge";
 
