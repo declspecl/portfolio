@@ -3,13 +3,13 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "prepare": "husky",
-        "format": "prettier --cache --cache-location .cache/prettier --write .",
-        "lint": "eslint --cache --cache-location .cache/eslint --fix .",
+        "dev": "pnpm exec next dev",
+        "build": "pnpm exec next build",
+        "prepare": "pnpm exec husky",
+        "format": "pnpm exec prettier --cache --cache-location .cache/prettier --write .",
+        "lint": "pnpm exec eslint --cache --cache-location .cache/eslint --fix .",
         "clean": "rm -rf .next out",
-        "fullclean": "npm run clean && rm -rf node_modules"
+        "fullclean": "pnpm run clean && rm -rf node_modules"
     },
     "dependencies": {
         "@mdx-js/loader": "^3.1.1",
