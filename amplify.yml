@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g pnpm@10.32.0
+        - pnpm install --frozen-lockfile
+    build:
+      commands:
+        - pnpm run build
+  artifacts:
+    baseDirectory: out
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
