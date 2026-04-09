@@ -9,10 +9,11 @@ export const experienceEntries: TimelineEntryInformation[] = [
         location: "Detroit, Michigan",
         type: "bullets",
         bullets: [
-            "Enable millions of sellers to sell goods globally on Amazon",
-            "Conduct numerous large-scale migrations and code changes to modernize services",
-            "Develop a novel tool to diagnose Seller Support issues, facilitating easier debugging for engineering teams",
-            "Reduce maintenance overhead by aiding in deprecating and distributing responsibilities of legacy services",
+            "Primary developer on a greenfield seller experience (now org-wide top priority): designed and built backend service and frontend end-to-end, launching pilot to 100+ sellers",
+            "Built a 10k+ LOC diagnostic tool within first 90 days that cut Seller Support ticket contacts by 50%+; monitored via custom dashboards",
+            "Built a novel internal AI agent on AWS Bedrock AgentCore with MCP to accelerate debugging and migrations; led cross-team knowledge transfer",
+            "Designed and implemented high-concurrency pipeline processing 10k+ listings per workflow with thousands of bounded parallel API calls and production-grade observability",
+            "Led cross-org tiger team initiative to migrate 12+ services across 3 EU AWS regions, architecting VPC, PrivateLink, and DNS/service-discovery networking",
         ],
         badges: [
             Technology.AWS,
