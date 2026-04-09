@@ -20,4 +20,6 @@ export enum Technology {
     TRPC = "tRPC",
     Turborepo = "Turborepo",
     GenAI = "GenAI",
+    Expo = "Expo",
+    Playwright = "Playwright",
 }

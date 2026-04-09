@@ -4,11 +4,12 @@ import { Technology } from "@/lib/common";
 export const projects: Project[] = [
     {
         name: "UniFit",
-        summary: "Full-stack meal planning solution for university students",
+        summary: "Full-stack automated university meal planning platform",
         technologies: [
             Technology.React,
             Technology.TypeScript,
             Technology.NextJS,
+            Technology.Expo,
             Technology.TailwindCSS,
             Technology.PostgreSQL,
             Technology.Vercel,
@@ -16,13 +17,15 @@ export const projects: Project[] = [
             Technology.TRPC,
             Technology.Turborepo,
             Technology.GenAI,
+            Technology.Playwright,
+            Technology.AWS,
         ],
         links: {
             live: "https://www.unifit.me",
         },
         screenshots: [
             {
-                name: "UniFit hero page",
+                name: "UniFit landing page",
                 mobile: {
                     src: "/images/unifit/hero-460w.webp",
                     width: 460,
@@ -40,55 +43,109 @@ export const projects: Project[] = [
                 },
             },
             {
-                name: "UniFit meal plan demo",
+                name: "UniFit live demo walkthrough",
                 mobile: {
-                    src: "/images/unifit/demo-460w.webp",
+                    src: "/images/unifit/landing-builder-460w.webp",
                     width: 460,
                     height: 368,
                 },
                 desktop: {
-                    src: "/images/unifit/demo-350w.webp",
+                    src: "/images/unifit/landing-builder-350w.webp",
                     width: 350,
                     height: 280,
                 },
                 magnified: {
-                    src: "/images/unifit/demo-740w.webp",
+                    src: "/images/unifit/landing-builder-740w.webp",
                     width: 740,
                     height: 592,
                 },
             },
             {
-                name: "UniFit features overview",
+                name: "UniFit pricing page",
                 mobile: {
-                    src: "/images/unifit/features-460w.webp",
+                    src: "/images/unifit/pricing-460w.webp",
                     width: 460,
                     height: 368,
                 },
                 desktop: {
-                    src: "/images/unifit/features-350w.webp",
+                    src: "/images/unifit/pricing-350w.webp",
                     width: 350,
                     height: 280,
                 },
                 magnified: {
-                    src: "/images/unifit/features-740w.webp",
+                    src: "/images/unifit/pricing-740w.webp",
                     width: 740,
                     height: 592,
                 },
             },
             {
-                name: "UniFit FAQ and waitlist",
+                name: "UniFit daily meal plans",
                 mobile: {
-                    src: "/images/unifit/faq-460w.webp",
+                    src: "/images/unifit/plans-460w.webp",
                     width: 460,
                     height: 368,
                 },
                 desktop: {
-                    src: "/images/unifit/faq-350w.webp",
+                    src: "/images/unifit/plans-350w.webp",
                     width: 350,
                     height: 280,
                 },
                 magnified: {
-                    src: "/images/unifit/faq-740w.webp",
+                    src: "/images/unifit/plans-740w.webp",
+                    width: 740,
+                    height: 592,
+                },
+            },
+            {
+                name: "UniFit meal plan builder",
+                mobile: {
+                    src: "/images/unifit/builder-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/unifit/builder-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/unifit/builder-740w.webp",
+                    width: 740,
+                    height: 592,
+                },
+            },
+            {
+                name: "UniFit nutritional goal presets",
+                mobile: {
+                    src: "/images/unifit/preferences-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/unifit/preferences-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/unifit/preferences-740w.webp",
+                    width: 740,
+                    height: 592,
+                },
+            },
+            {
+                name: "UniFit meal plan history",
+                mobile: {
+                    src: "/images/unifit/history-460w.webp",
+                    width: 460,
+                    height: 368,
+                },
+                desktop: {
+                    src: "/images/unifit/history-350w.webp",
+                    width: 350,
+                    height: 280,
+                },
+                magnified: {
+                    src: "/images/unifit/history-740w.webp",
                     width: 740,
                     height: 592,
                 },
@@ -96,8 +153,107 @@ export const projects: Project[] = [
         ],
         type: "bullets",
         bullets: [
-            "Engineered an optimal meal plan generation algorithm using dynamic programming, reducing computation time and memory footprint both by over 90% compared to brute force approaches",
-            "Architected a REST API to efficiently query ~800k meal plans considering various user preferences",
+            "Co-founded UniFit and led the product from zero to production, reaching 100 peak DAU in the first month",
+            "Architected a cross-platform TypeScript system (Next.js web + Expo mobile + tRPC + Neon Postgres) with end-to-end type-safe APIs, auth, and analytics",
+            "Built a constraint-based meal plan engine and automated multi-university menu data pipelines (scheduled Playwright parsing + scraping) with GenAI ranking and data enrichment",
+        ],
+    },
+    {
+        name: "Personle!",
+        summary: "Full-stack daily guessing game for characters from the Persona video game series",
+        technologies: [
+            Technology.React,
+            Technology.TypeScript,
+            Technology.TailwindCSS,
+            Technology.Java,
+            Technology.SpringBoot,
+            Technology.AWS,
+            Technology.Rust,
+            Technology.Nginx,
+            Technology.Figma,
+        ],
+        links: {
+            github: "https://github.com/declspecl/personle",
+            live: "https://www.personle.app",
+        },
+        screenshots: [
+            {
+                name: "Personle! home page",
+                mobile: {
+                    src: "/images/personle/home-460w.webp",
+                    width: 460,
+                    height: 367,
+                },
+                desktop: {
+                    src: "/images/personle/home-350w.webp",
+                    width: 350,
+                    height: 279,
+                },
+                magnified: {
+                    src: "/images/personle/home-740w.webp",
+                    width: 740,
+                    height: 590,
+                },
+            },
+            {
+                name: "Personle! daily play page",
+                mobile: {
+                    src: "/images/personle/daily-460w.webp",
+                    width: 460,
+                    height: 367,
+                },
+                desktop: {
+                    src: "/images/personle/daily-350w.webp",
+                    width: 350,
+                    height: 279,
+                },
+                magnified: {
+                    src: "/images/personle/daily-740w.webp",
+                    width: 740,
+                    height: 590,
+                },
+            },
+            {
+                name: "Personle! daily play correct guess",
+                mobile: {
+                    src: "/images/personle/daily-correct-460w.webp",
+                    width: 460,
+                    height: 367,
+                },
+                desktop: {
+                    src: "/images/personle/daily-correct-350w.webp",
+                    width: 350,
+                    height: 279,
+                },
+                magnified: {
+                    src: "/images/personle/daily-correct-740w.webp",
+                    width: 740,
+                    height: 590,
+                },
+            },
+            {
+                name: "Personle! compendium page",
+                mobile: {
+                    src: "/images/personle/compendium-460w.webp",
+                    width: 460,
+                    height: 367,
+                },
+                desktop: {
+                    src: "/images/personle/compendium-350w.webp",
+                    width: 350,
+                    height: 279,
+                },
+                magnified: {
+                    src: "/images/personle/compendium-740w.webp",
+                    width: 740,
+                    height: 590,
+                },
+            },
+        ],
+        type: "bullets",
+        bullets: [
+            "Scaled from launch to 600 peak DAU with 99.9% uptime via automated CDK IaC pipelines on a self-hosted VPS",
+            "Applied creative and accessible UI styling techniques to mimic the complex art style of Persona 5",
         ],
     },
     {
@@ -196,105 +352,6 @@ export const projects: Project[] = [
             "Designed and built a local-first desktop application using Tauri with semantic file search and automatic tagging",
             "Implemented AI-native workflows for intelligent file organization without cloud uploads or privacy compromises",
             "Utilized AI to generate tags for files based on their content, allowing for more accurate and efficient file organization",
-        ],
-    },
-    {
-        name: "Personle!",
-        summary: "Full-stack daily guessing game for characters from the Persona video game series",
-        technologies: [
-            Technology.React,
-            Technology.TypeScript,
-            Technology.TailwindCSS,
-            Technology.Java,
-            Technology.SpringBoot,
-            Technology.AWS,
-            Technology.Rust,
-            Technology.Nginx,
-            Technology.Figma,
-        ],
-        links: {
-            github: "https://github.com/declspecl/personle",
-            live: "https://www.personle.app",
-        },
-        screenshots: [
-            {
-                name: "Personle! home page",
-                mobile: {
-                    src: "/images/personle/home-460w.webp",
-                    width: 460,
-                    height: 367,
-                },
-                desktop: {
-                    src: "/images/personle/home-350w.webp",
-                    width: 350,
-                    height: 279,
-                },
-                magnified: {
-                    src: "/images/personle/home-740w.webp",
-                    width: 740,
-                    height: 590,
-                },
-            },
-            {
-                name: "Personle! daily play page",
-                mobile: {
-                    src: "/images/personle/daily-460w.webp",
-                    width: 460,
-                    height: 367,
-                },
-                desktop: {
-                    src: "/images/personle/daily-350w.webp",
-                    width: 350,
-                    height: 279,
-                },
-                magnified: {
-                    src: "/images/personle/daily-740w.webp",
-                    width: 740,
-                    height: 590,
-                },
-            },
-            {
-                name: "Personle! daily play correct guess",
-                mobile: {
-                    src: "/images/personle/daily-correct-460w.webp",
-                    width: 460,
-                    height: 367,
-                },
-                desktop: {
-                    src: "/images/personle/daily-correct-350w.webp",
-                    width: 350,
-                    height: 279,
-                },
-                magnified: {
-                    src: "/images/personle/daily-correct-740w.webp",
-                    width: 740,
-                    height: 590,
-                },
-            },
-            {
-                name: "Personle! compendium page",
-                mobile: {
-                    src: "/images/personle/compendium-460w.webp",
-                    width: 460,
-                    height: 367,
-                },
-                desktop: {
-                    src: "/images/personle/compendium-350w.webp",
-                    width: 350,
-                    height: 279,
-                },
-                magnified: {
-                    src: "/images/personle/compendium-740w.webp",
-                    width: 740,
-                    height: 590,
-                },
-            },
-        ],
-        type: "bullets",
-        bullets: [
-            "Scaled application from launch to 600 peak DAU with a performant REST API and NoSQL database",
-            "Achieved 99.9% uptime through automated CDK IaC pipelines on a self-hosted VPS",
-            "Applied creative and accessible UI styling techniques to mimic the complex art style of Persona 5",
         ],
     },
     {

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { IconContext } from "react-icons";
 import { FaSpotify } from "react-icons/fa6";
-import { LuUtensils, LuFolderSearch } from "react-icons/lu";
+import { LuUtensils } from "react-icons/lu";
 import { LuArrowUpRight } from "react-icons/lu";
 
 export function HeroBadges() {
@@ -20,18 +20,6 @@ export function HeroBadges() {
                 }
                 className="border-red-800 bg-orange-950/50 text-orange-100 hover:bg-orange-800/50"
             />
-
-            <HeroBadge
-                text="Building: Fouseion"
-                href="https://www.fouseion.com"
-                icon={
-                    <IconContext.Provider value={{ size: "1rem" }}>
-                        <LuFolderSearch />
-                    </IconContext.Provider>
-                }
-                className="border-yellow-800 bg-yellow-950/40 text-yellow-100 hover:bg-yellow-800/50"
-            />
-
             <HeroBadge
                 text="Listening to: Mystery"
                 href="https://open.spotify.com/track/41ZPPTp7Hj9Bhy361OKtfK"
