@@ -1,5 +1,5 @@
 import { monthByNumber } from "./model";
-import type { MonthNumber, TimelineEntryDate , Month} from "./model";
+import type { MonthNumber, TimelineEntryDate, Month } from "./model";
 
 export function formatTimelineEntryDate(date: TimelineEntryDate | null): string {
     if (!date) {
